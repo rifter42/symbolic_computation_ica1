@@ -1,5 +1,5 @@
 ;;defining namespace
-(ns enlive
+(ns scraper
   (:require [net.cgrand.enlive-html :as html]))
 
 ;;binding parks .html paths to variabes for clarity
@@ -17,5 +17,8 @@
 (def vojanovy_sady "./resources/parks_html/vojanovy_sady.html")
 (def vysehrad "./resources/parks_html/vysehrad.html")
 
+;;mapping html source for selection
+(html/html-resource (java.io.File. letna-park-page))
 
-
+;;TODO:select the relevant resources on each page
+(html/select (html/html-resource (java.io.File. letna-park-page)) [:div.class.id])
