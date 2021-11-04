@@ -30,13 +30,15 @@
 
 ;; extract text from relevant html tags
 (defn text-extract
-  "function takes file name and a class as clojure string returns text of"
+  "function takes file/park name and a class (as clojure string)
+  returns text content of matching tags/attributes"
   ([park-name]
    (map html/text
         (html/select
           (html/html-resource (java.io.File. park-name))
           [:div.js-tabbed-content
-           :p])))
+           :p]
+          )))
 
   ([park-name html-class]
    (map html/text
@@ -46,3 +48,5 @@
            (keyword (str "p." html-class))]
           )))
   )
+
+;;TODO: scraped data to JSON or CSV
