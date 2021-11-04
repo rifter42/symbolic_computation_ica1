@@ -17,8 +17,32 @@
 (def vojanovy_sady "./resources/parks_html/vojanovy_sady.html")
 (def vysehrad "./resources/parks_html/vysehrad.html")
 
-;;mapping html source for selection
-(html/html-resource (java.io.File. letna-park-page))
+;;example of mapping html source to allow selection selection
+(html/html-resource (java.io.File. letenske_sady))
 
-;;TODO:select the relevant resources on each page
-(html/select (html/html-resource (java.io.File. letna-park-page)) [:div.class.id])
+;;select the relevant resources on each page
+(html/select (html/html-resource (java.io.File. letenske_sady)) [:div.js-tabbed-content
+                                                                 :p])
+;;Classes of the Values to extract:
+;;i_restaurace, i_wc, i_misto, i_kolo, i_brusle, i_sport
+;;i_hriste, i_mhd, i_gps, i_parking, i_cesty, i_provoz
+;;i_doba
+
+;; extract text from relevant html tags
+(defn text-extract
+  "function takes file name and a class as clojure string returns text of"
+  ([park-name]
+   (map html/text
+        (html/select
+          (html/html-resource (java.io.File. park-name))
+          [:div.js-tabbed-content
+           :p])))
+
+  ([park-name html-class]
+   (map html/text
+        (html/select
+          (html/html-resource (java.io.File. park-name))
+          [:div.js-tabbed-content
+           (keyword (str "p." html-class))]
+          )))
+  )
