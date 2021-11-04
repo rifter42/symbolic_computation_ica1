@@ -1,6 +1,7 @@
 ;;defining namespace
 (ns scraper
-  (:require [net.cgrand.enlive-html :as html]))
+  (:require [net.cgrand.enlive-html :as html]
+            [clojure.data.json :as json]))
 
 ;;binding parks .html paths to variabes for clarity
 (def letenske_sady "./resources/parks_html/letenske_sady.html")
@@ -50,3 +51,4 @@
   )
 
 ;;TODO: scraped data to JSON or CSV
+(json/write (text-extract letenske_sady))
