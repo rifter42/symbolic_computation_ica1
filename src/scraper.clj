@@ -41,14 +41,55 @@
            :p]
           )))
 
-  ([park-name html-class]
-   (map html/text
+  ;if bool false, joker should be a html class from the lst above
+  ;if bool is true, joker should be either key or value
+  ([park-name bool joker]
+   (if (= false bool)
+    (map html/text
         (html/select
           (html/html-resource (java.io.File. park-name))
           [:div.js-tabbed-content
-           (keyword (str "p." html-class))]
+           (keyword (str "p." joker))]
           )))
+   (if (= true bool)
+     ;getting the keys for later JSON processing
+     (if (= joker "key")
+       (map html/text
+          (html/select
+            (html/html-resource (java.io.File. park-name))
+            [:div.js-tabbed-content
+             :p
+             :strong]
+            )))
+
+
+     )
+   ;;getting the values for later JSON processing
+   ;;the n-th child 2 selects the font tag that comes as a second desendent of p tag
+   (if (= joker "value")
+     (map html/text
+          (html/select
+            (html/html-resource (java.io.File. park-name))
+            [:div.js-tabbed-content
+             :p
+             [:font (html/nth-child 2)]]
+            ))))
   )
 
-;;TODO: scraped data to JSON or CSV
+;;TODO: function to iterate through the list of parks
+(def parks-list (keys (ns-publics 'scraper)))
+
+(defn extractor-helper [lst func]
+  (map func lst))
+
+;;example usage: (extractor-helper parks-list extracting-function)
+
+;;TODO: scraped data to JSON
 (json/write (text-extract letenske_sady))
+
+;;something that works
+;; create json from string, then we read it and pprint it
+(json/pprint (json/read-str (json/write-str (text-extract letenske_sady))))
+
+;;example of running/using write
+(json/write-str (text-extract bertramka "i_wc") java.util.Collection)
