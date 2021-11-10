@@ -101,3 +101,32 @@
 
 (json/write letenske_sady java.util.Map {:key-fn text-extract-keys
                                          :value-fn text-extract-values})
+;;todo: map from keys and values
+(zipmap (keys (text-extract-keys letenske_sady)) (vals (text-extract-keys letenske_sady)))
+
+;;todo: Lazyseq of keys
+(map keyword (text-extract-keys letenske_sady))
+
+;;sanitizing output
+(defn sanitizer [str]
+  (clojure.string/replace
+    (clojure.string/replace
+      (clojure.string/replace
+        str
+        #"\s+\S*$" "")
+      #" " "_")
+    #":" "")
+  )
+
+;;sanitizing keywords
+
+(defn key-sanitizer [park-name]
+  (map keyword
+       (map
+         sanitizer (text-extract-keys park-name))))
+
+(zipmap (key-sanitizer letenske_sady)
+        (vals "test"))
+
+
+
