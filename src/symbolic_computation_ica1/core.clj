@@ -1,14 +1,13 @@
 (ns symbolic-computation-ica1.core
-  (:require
-    [symbolic-computation-ica1.chatbot :as chatbot])
+  (:require [symbolic-computation-ica1.chatbot :as chatbot])
   (:gen-class))
 
 (defn -main
   "Main function"
   []
-  (println chatbot/welcome-message)
+  (chatbot/start!)
   (loop []
-    (let [input (read-line)]
+    (let [input (chatbot/get-input)]
       (if (chatbot/exit? input)
         (chatbot/exit!)
         (do
