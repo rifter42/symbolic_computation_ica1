@@ -4,19 +4,48 @@
             [clojure.data.json :as json]))
 
 ;;binding parks .html paths to variabes for clarity
-(def letenske_sady "./resources/parks_html/letenske_sady.html")
+(def letenske-sady "./resources/parks_html/letenske_sady.html")
 (def bertramka "./resources/parks_html/bertramka.html")
-(def frantiskanska_zahrada "./resources/parks_html/frantiskanska_zahrada.html")
+(def frantiskanska-zahrada "./resources/parks_html/frantiskanska_zahrada.html")
 (def kampa "./resources/parks_html/kampa.html")
-(def kinskeho_zahrada "./resources/parks_html/kinskeho_zahrada.html")
+(def kinskeho-zahrada "./resources/parks_html/kinskeho_zahrada.html")
 (def klamovka "./resources/parks_html/klamovka.html")
 (def ladronka "./resources/parks_html/ladronka.html")
-(def obora_hvezda "./resources/parks_html/obora_hvezda.html")
+(def obora-hvezda "./resources/parks_html/obora_hvezda.html")
 (def petrin "./resources/parks_html/petrin.html")
-(def riegrovy_sady "./resources/parks_html/riegrovy_sady.html")
+(def riegrovy-sady "./resources/parks_html/riegrovy_sady.html")
 (def stromovka "./resources/parks_html/stromovka.html")
-(def vojanovy_sady "./resources/parks_html/vojanovy_sady.html")
+(def vojanovy-sady "./resources/parks_html/vojanovy_sady.html")
 (def vysehrad "./resources/parks_html/vysehrad.html")
+
+;;parks as a list of strings list
+;;The order of this one shall remain the same
+(def parks-str-list (map str (keys (ns-publics 'scraper))))
+
+;;parks of files references
+(def parks-list
+  (list
+    parks-list
+    letenske-sady
+    stromovka
+    klamovka
+    bertramka
+    text-extract
+    vysehrad
+    kinskeho-zahrada
+    petrin
+    text-extract-keys
+    riegrovy-sady
+    obora-hvezda
+    vojanovy-sady
+    text-extract-values
+    parks-list
+    kampa
+    frantiskanska-zahrada
+    key-sanitizer
+    map-generator
+    ladronka
+    sanitizer))
 
 ;;example of mapping html source to allow selection selection
 (html/html-resource (java.io.File. letenske_sady))
@@ -75,8 +104,6 @@
                ))))
     )))
 
-;;TODO: function to iterate through the list of parks
-(def parks-list (keys (ns-publics 'scraper)))
 
 (defn extractor-helper [lst func]
   (map func lst))
@@ -127,6 +154,30 @@
 
 (zipmap (key-sanitizer letenske_sady)
         (vals "test"))
+
+;Todo:getting description of a park and initiating the map
+
+(json/pprint (json/read-str (json/write-str (assoc {} :description
+                                                      (first (map html/text
+                                                                  (html/select
+                                                                    (html/html-resource (java.io.File. letenske_sady))
+                                                                    [:p.perex])))))))
+
+;; takes string
+(defn map-generator [park-name]
+  (assoc {} (keyword park-name)
+            (assoc {} :description
+                      (map html/text
+                           (html/select
+                             (html/html-resource (java.io.File. (eval (read-string park-name))))
+                             [:p.perex])))))
+
+(defn json-generator [park-list ]
+  (loop [park-name park-list]
+    (let [map (map-generator park-name)]
+      (println "./resources/parks_json/park-description.json" "Line to be written")
+      (spit "./resources/parks_json/park-description.json" map :append true)))
+  )
 
 
 
