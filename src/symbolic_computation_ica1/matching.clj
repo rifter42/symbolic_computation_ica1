@@ -1,8 +1,6 @@
 (ns symbolic-computation-ica1.matching
   (:require [clojure.data.json :as json]
-            [clojure.set :as set]))
-
-(def selected-park (ref "a"))
+            [clojure.string :as string]))
 
 (defn load-park-info []
   (json/read-str (slurp "files/park-data.json") :key-fn keyword))
@@ -13,25 +11,27 @@
   (def possible-info (into #{} (keys (reduce merge (vals parks)))))
   (def selected-park (ref nil)))
 
-(defn split-input [str]
-  (clojure.string/split str #" "))
-
 (defn match-keyword [keys el]
-  (if (contains? keys (keyword el))
-      (keyword el)))
+  (when (contains? keys (keyword el))
+    (keyword el)))
 
 (defn get-parks-list [key park]
-  (if (contains? (get parks park) key)
-    park))
+  (when (contains? (get parks park) key)
+    (name park)))
 
 (defn match-keywords [keys query]
-  (let [query-vector (split-input query)]
-    (first (filter identity (map #(match-keyword keys %) query-vector)))))
+  (let [query-vector (string/split query #" ")]
+    (first
+      (filter identity
+        (map #(match-keyword keys %) query-vector)))))
 
 (defn get-parks-with-keyword [keyword]
-  (clojure.string/join ", "
+  (string/join ", "
     (filter identity
       (map #(get-parks-list keyword %) park-names))))
+
+(defn get-parks-activities [park]
+  (string/join ", " (map name (keys (get parks park)))))
 
 (defn match [query]
   (let* [matched-park (match-keywords park-names query)
