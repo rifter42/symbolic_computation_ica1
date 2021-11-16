@@ -113,27 +113,43 @@
          sanitizer (text-extract-keys park-name))))
 
 ;; takes string
-(defn map-generator [park-name]
-  (assoc {} (keyword park-name)
-            (assoc {} :description
-                      (first
-                        (map html/text
-                           (html/select
-                             (html/html-resource (java.io.File. (eval (read-string park-name))))
-                             [:p.perex]))))))
+(defn map-generator
+  ([park-name]
+   (assoc {} (keyword park-name)
+             (assoc {} :description
+                       (first
+                         (map html/text
+                              (html/select
+                                (html/html-resource (java.io.File. (eval (read-string park-name))))
+                                [:p.perex]))))))
 
-;;testing json generation
+  ;; merging
+  ([park-name map]
+   (merge (map-generator park-name) map)))
+
+;;testing json generation for one park
 (defn json-generator [park-list]
   (spit "./resources/parks_json/park-description.json" (json/write-str
                                                          (map-generator (first park-list))))
   (loop [park-lst (rest park-list)]
-    (let [park-map (map-generator
-                     (json/write-str (first park-lst)))]
+    (let [park-map (json/write-str
+                     (map-generator (first park-lst)))]
       ;(spit "./resources/parks_json/park-description.json" park-map :append true)
-      ;(println "./resources/parks_json/park-description.json" park-map)
+      (println "./resources/parks_json/park-description.json" park-map)
       )
     (and (not (nil? (rest park-lst))) (recur (rest park-lst)))
     ))
+
+;; generating json-formatted description for all of parks
+
+(defn json-generator [parks-list]
+  "transforms a map of parks descriptions to a JSON formatted file"
+  (let [parks-map (apply merge
+                         (map map-generator
+                              parks-list))]
+    (spit "./resources/parks_json/park-description.json"
+          (json/write-str parks-map)
+          :append false)))
 
 ;generate JSON file
 (spit "./resources/parks_json/park-description.json" map :append true)
