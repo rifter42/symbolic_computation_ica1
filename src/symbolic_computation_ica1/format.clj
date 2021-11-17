@@ -11,6 +11,13 @@
     (str/replace key #"ing" "")
     (str/replace key #"ing" "e")))
 
+;;Formatting user input
+(defn sanitizer [string]
+  (str/replace
+    (str/lower-case string)
+    #"[;,.!?\\]" "")
+  )
+
 (defn translate-values-found [park key matched-info]
   (cond
     (= :attractions (keyword key))
