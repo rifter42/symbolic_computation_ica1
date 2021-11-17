@@ -13,9 +13,21 @@
 
 ;;Formatting user input
 (defn sanitizer [string]
-  (str/replace
-    (str/lower-case string)
-    #"[;,.!?\\]" "")
+  (let [sentence (str/replace
+                   (str/lower-case string)
+                   #"[;,.!?\\]" "")]
+
+    (if (nil? (first (filter (fn [x] (str/includes? sentence x))
+                             ["kinskeho-zahrada"
+                              "letenske-sady"
+                              "riegrovy-sady"
+                              "obora-hvezda"
+                              "vojanovy-sady"
+                              "frantiskanska-zahrada"])))
+      (str/replace
+        sentence
+        #"-" " ")
+      sentence))
   )
 
 (defn translate-values-found [park key matched-info]
