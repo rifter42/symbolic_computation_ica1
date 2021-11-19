@@ -5,8 +5,8 @@
 
 (def welcome-message
   "========================================================================
-                  Welcome to Prague Parks chatbot!
-The chatbot is designed to guide you on your jorney through Prague parks.
+                  Welcome to Prague Parks Chatbot!
+The chatbot is designed to guide you on your journey through Prague parks.
 
 To exit the application, type quit.
 ========================================================================")
@@ -37,19 +37,23 @@ To exit the application, type quit.
   (print-fl "> ")
   (clojure.string/trim-newline (read-line)))
 
+(defn print-bot [output]
+  (println "Bot>" output)
+  (flush))
+
 (defn answer! [input]
   (let [[park info park-info] (matching/match input)]
     (cond
       (and (not (nil? park)) (not (nil? info)) (not (nil? park-info)))
-        (println (formatting/translate-values-found
+        (print-bot (formatting/translate-values-found
                  (name park) (name info) park-info))
       (and (not (nil? park)) (not (nil? info)))
-        (println (format "%s %s"
+        (print-bot (format "%s %s"
                  (formatting/translate-values-not-found (name info))
                  (matching/get-parks-with-keyword info)))
       (not (nil? park))
-        (println (format "History about %s incoming...\n\nI can tell you about %s in %s"
+        (print-bot (format "History about %s incoming...\n\nI can tell you about %s in %s"
                  (name park) (matching/get-parks-activities park) (name park)))
       (not (nil? info))
-        (println (format "I have information about %s in %s."
+        (print-bot (format "I have information about %s in %s."
                  (name info) (matching/get-parks-with-keyword info))))))
