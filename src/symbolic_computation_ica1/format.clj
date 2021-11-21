@@ -14,25 +14,32 @@
     (str/replace key #"ing" "")
     (str/replace key #"ing" "e")))
 
+(defn keyword-to-park
+  "Replaces keyword park names with regular names"
+  [keyword]
+  (-> keyword
+    (name)
+    (str/replace #"-" " ")
+    (str/capitalize)))
+
+(defn park-to-keyword
+  "Replaces two word park names with keyword names"
+  [input]
+  (-> input
+    (str/replace #"kinskeho zahrada" "kinskeho-zahrada")
+    (str/replace #"letenske sady" "letenske-sady")
+    (str/replace #"riegrovy sady" "riegrovy-sady")
+    (str/replace #"obora hvezda" "obora-hvezda")
+    (str/replace #"vojanovy sady" "vojanovy-sady")
+    (str/replace #"frantiskanska zahrada" "frantiskanska-zahrada")))
+
 (defn sanitizer
   "Sanitises user input before passing it for matching"
-  [string]
-  (let [sentence (str/replace
-                   (str/lower-case string)
-                   #"[;,.!?\\]" "")]
-
-    (if (nil? (first (filter (fn [x] (str/includes? sentence x))
-                             ["kinskeho-zahrada"
-                              "letenske-sady"
-                              "riegrovy-sady"
-                              "obora-hvezda"
-                              "vojanovy-sady"
-                              "frantiskanska-zahrada"])))
-      (str/replace
-        sentence
-        #"-" " ")
-      sentence))
-  )
+  [input]
+  (-> input
+    (str/lower-case)
+    (str/replace #"[;,.!?\\]" "")
+    (park-to-keyword)))
 
 (defn translate-values-found
   "Formats a response based on the results of the matching when the results for

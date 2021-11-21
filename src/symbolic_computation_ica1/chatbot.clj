@@ -45,7 +45,7 @@ To exit the application, type quit.
   (set-name! (get-input))
   (print-bot (str "Hi " @user-name "! If you already know which park you want to visit, just type its name"
             " and I'll give you a small overview.\nCurrently, I can tell you about"
-            " the following parks: " (clojure.string/join ", " (map name matching/park-names))))
+            " the following parks: " (clojure.string/join ", " (map formatting/keyword-to-park matching/park-names))))
   (print-bot (str "If you aren't sure which park to visit, ask about the activity"
                  " you'd like to do!")))
 
@@ -63,19 +63,21 @@ To exit the application, type quit.
   "Main bot fucntion, contains answer logic based on the kind of information
   matched from user input. Displays bot answer to the user."
   [input]
-  (let [[park info park-info] (matching/match input)]
+  (println (formatting/sanitizer input))
+  (let [[park info park-info] (matching/match (formatting/sanitizer input))]
     (cond
       (and (not (nil? park)) (not (nil? info)) (not (nil? park-info)))
         (print-bot (formatting/translate-values-found
-                 (name park) (name info) park-info))
+                    (name park) (name info) park-info))
       (and (not (nil? park)) (not (nil? info)))
         (print-bot (format "%s %s"
-                 (formatting/translate-values-not-found (name info))
-                 (matching/get-parks-with-keyword info)))
+                    (formatting/translate-values-not-found (name info))
+                    (matching/get-parks-with-keyword info)))
       (not (nil? park))
         (print-bot (format "%s \n\nI can tell you about %s in %s."
-                  (get (get hist-data park) :description)
-                 (matching/get-parks-activities park) (name park)))
+                    (get (get hist-data park) :description)
+                    (matching/get-parks-activities park)
+                    (formatting/keyword-to-park park)))
       (not (nil? info))
         (print-bot (format "I have information about %s in %s."
-                 (name info) (matching/get-parks-with-keyword info))))))
+                    (name info) (matching/get-parks-with-keyword info))))))
