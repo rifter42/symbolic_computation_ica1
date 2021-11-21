@@ -1,14 +1,30 @@
-# symbolic_computation_ica1
+# Prague Parks Chatbot
 
-A Clojure library designed to ... well, that part is up to you.
+An ELIZA-sryle chatbot that is implemented fully in Clojure. It is designed to provide information about different parks in Prague.
+The information provided ranges from the set of facilities in place to the various activities that can be done in a specific park.
 
+The chatbot can be used from Clojure REPL environment.
+
+## Installation
+
+Either [Clojure](https://clojure.org/) or [Lein](https://leiningen.org/) can be used to run 
+To run the chatbot, it should be cloned to be used in local environment:
+
+```bash
+git clone https://github.com/rifter42/symbolic_computation_ica1.git
+```
 ## Usage
 
-FIXME
+To run the chatbot using lein:
+
+```bash
+cd symbolic_computation_ica1
+lein run -m symbolic-computation-ica1.core
+```
 
 ## License
 
-Copyright © 2021 FIXME
+Copyright © 2021 Feynman43 and Rifter42
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
