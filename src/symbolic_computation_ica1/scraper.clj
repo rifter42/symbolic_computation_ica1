@@ -1,5 +1,5 @@
 ;;defining namespace
-(ns symbolic-computation-ica1.scraping
+(ns symbolic-computation-ica1.scraper
   (:require [net.cgrand.enlive-html :as html]
             [clojure.data.json :as json]))
 
