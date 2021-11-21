@@ -3,10 +3,14 @@
 The goal of this project was to create a textual chatbot bases on the ELIZA system in Clojure programming language. The chatbot should be able to provide information about parks of Prague.
 
 The following MVP requirements were outlined:
+
 * The application must be started by an appropriate command
+
 * The chatbot must follow a dialogue structure inspired by the ELIZA system
+
 * The program must have at least 10 response options that use the keywords provided by the
 user
+
 * The application must be able to provide basic information about Prague parks upon request. For the first task, provide only
 textual information for one park
 
