@@ -5,6 +5,8 @@ The information provided ranges from the set of facilities in place to the vario
 
 The chatbot can be used from Clojure REPL environment.
 
+More information and documentation availiable at https://rifter42.github.io/symbolic_computation_ica1/index.html
+
 ## Installation
 
 Either [Clojure](https://clojure.org/) or [Lein](https://leiningen.org/) can be used to run 
