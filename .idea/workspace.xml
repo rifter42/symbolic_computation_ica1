@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2250c14e-a7b1-47cd-8ad8-c62286d87e2f" name="Changes" comment="removing unnecessary ;; comments">
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../prague_parks_chatbot/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/doc/intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/../prague_parks_chatbot/doc/intro.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/../prague_parks_chatbot/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/src/symbolic_computation_ica1/chatbot.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/src/symbolic_computation_ica1/core.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/src/symbolic_computation_ica1/formatting.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/src/symbolic_computation_ica1/matching.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/src/symbolic_computation_ica1/scraper.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/symbolic_computation_ica1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prague_parks_chatbot/test/symbolic_computation_ica1/core_test.clj" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../prague_parks_chatbot" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="rifter42" />
+        <option name="repository" value="symbolic_computation_ica1" />
+      </RepoCoordinatesHolder>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/prague_parks_chatbot.iml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/src/prague_parks_chatbot/scraper.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/src/prague_parks_chatbot/chatbot.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/src/prague_parks_chatbot/formatting.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/src/prague_parks_chatbot/matching.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/project.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/src/prague_parks_chatbot/core.clj" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../prague_parks_chatbot/test/prague_parks_chatbot/core_test.clj" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1zxERX98lVRv2XsoczUCK70elFD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../prague_parks_chatbot" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Prague college_courses\Symbolic Computation 2104\symbolic_computation_ica1\src\symbolic_computation_ica1" />
+    </key>
+  </component>
+  <component name="ReplState" timestamp="1637510914008">{:repl-history {:ide [], :local [{:command &quot;(mapcat identity (keys (ns-publics 'scraper)))&quot;, :offset 46, :ns &quot;scraper&quot;} {:command &quot;(mapcat seq (keys (ns-publics 'scraper)))&quot;, :offset 41, :ns &quot;scraper&quot;} {:command &quot;(def parks-list\n  letenske-sady\n  stromovka\n  klamovka\n  bertramka\n  text-extract\n  vysehrad\n  kinskeho-zahrada\n  petrin\n  text-extract-keys\n  riegrovy-sady\n  obora-hvezda\n  vojanovy-sady\n  text-extract-values\n  parks-list\n  kampa\n  frantiskanska-zahrada\n  key-sanitizer\n  map-generator\n  ladronka\n  sanitizer)&quot;, :offset 310, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. park-name))\n                             [:p.perex])))))&quot;, :offset 296, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (str park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. park-name))\n                             [:p.perex])))))&quot;, :offset 292, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. (eval park-name)))\n                             [:p.perex])))))&quot;, :offset 303, :ns &quot;scraper&quot;} {:command &quot;(eval \&quot;letenske-sady\&quot;)&quot;, :offset 22, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. (read-string park-name)))\n                             [:p.perex])))))&quot;, :offset 310, :ns &quot;scraper&quot;} {:command &quot;(def letenske-sady \&quot;./resources/parks_html/letenske_sady.html\&quot;)\n(def bertramka \&quot;./resources/parks_html/bertramka.html\&quot;)\n(def frantiskanska-zahrada \&quot;./resources/parks_html/frantiskanska_zahrada.html\&quot;)\n(def kampa \&quot;./resources/parks_html/kampa.html\&quot;)\n(def kinskeho-zahrada \&quot;./resources/parks_html/kinskeho_zahrada.html\&quot;)\n(def klamovka \&quot;./resources/parks_html/klamovka.html\&quot;)\n(def ladronka \&quot;./resources/parks_html/ladronka.html\&quot;)\n(def obora-hvezda \&quot;./resources/parks_html/obora_hvezda.html\&quot;)\n(def petrin \&quot;./resources/parks_html/petrin.html\&quot;)\n(def riegrovy-sady \&quot;./resources/parks_html/riegrovy_sady.html\&quot;)\n(def stromovka \&quot;./resources/parks_html/stromovka.html\&quot;)\n(def vojanovy-sady \&quot;./resources/parks_html/vojanovy_sady.html\&quot;)\n(def vysehrad \&quot;./resources/parks_html/vysehrad.html\&quot;)&quot;, :offset 775, :ns &quot;letenske-sady&quot;} {:command &quot;(print (read-string \&quot;letenske-sady\&quot;))&quot;, :offset 37, :ns &quot;scraper&quot;} {:command &quot;(type letenske-sady)&quot;, :offset 20, :ns &quot;scraper&quot;} {:command &quot;(type (read-string \&quot;letenske-sady\&quot;))&quot;, :offset 36, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. \n                                                   (eval (read-string park-name))))\n                             [:p.perex])))))&quot;, :offset 369, :ns &quot;scraper&quot;} {:command &quot;(print letenske-sady)&quot;, :offset 21, :ns &quot;scraper&quot;} {:command &quot;(print (eval (read-string \&quot;letenske-sady\&quot;)))&quot;, :offset 44, :ns &quot;scraper&quot;} {:command &quot;(map-generator \&quot;letenske-sady\&quot;)&quot;, :offset 31, :ns &quot;scraper&quot;} {:command &quot;(map map-generator parks-list)&quot;, :offset 30, :ns &quot;scraper&quot;} {:command &quot;(reduce map-generator parks-list)&quot;, :offset 33, :ns &quot;scraper&quot;} {:command &quot;(print (apply map-generator parks-list))&quot;, :offset 40, :ns &quot;scraper&quot;} {:command &quot;(map-generator (first parks-list))&quot;, :offset 34, :ns &quot;scraper&quot;} {:command &quot;(first parks-list)&quot;, :offset 18, :ns &quot;scraper&quot;} {:command &quot;(def parks-list nil)&quot;, :offset 20, :ns &quot;scraper&quot;} {:command &quot;(def parks-list\n  (list\n    parks-list\n    letenske-sady\n    stromovka\n    klamovka\n    bertramka\n    text-extract\n    vysehrad\n    kinskeho-zahrada\n    petrin\n    text-extract-keys\n    riegrovy-sady\n    obora-hvezda\n    vojanovy-sady\n    text-extract-values\n    parks-list\n    kampa\n    frantiskanska-zahrada\n    key-sanitizer\n    map-generator\n    ladronka\n    sanitizer))&quot;, :offset 374, :ns &quot;nil&quot;} {:command &quot;(print parks-list)&quot;, :offset 18, :ns &quot;scraper&quot;} {:command &quot;(print parks-str-list)&quot;, :offset 22, :ns &quot;scraper&quot;} {:command &quot;\n(defn key-sanitizer [park-name]\n  (map keyword\n       (map\n         sanitizer (text-extract-keys park-name))))&quot;, :offset 111, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. (eval (read-string park-name))))\n                             [:p.perex])))))&quot;, :offset 317, :ns &quot;scraper&quot;} {:command &quot;(map map-generator parks-str-list)&quot;, :offset 34, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (loop [park-name (first park-list)]\n    (map-generator park-name)\n    (println \&quot;./resources/parks_json/park-description.json\&quot; park-name)\n    (if (not (nil? (rest park-list)))\n      (recur (first (rest parks-list))))))&quot;, :offset 252, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (loop [park-lst park-list]\n    (map-generator (first park-lst))\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (first park-lst))\n    (if (not (nil? (rest park-list)))\n      (recur (rest parks-list)))))&quot;, :offset 249, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (loop [park-lst park-list]\n    (map-generator (first park-lst))\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (first park-lst))\n    (if (not (nil? (rest park-list)))\n      (recur (rest park-list)))))&quot;, :offset 248, :ns &quot;scraper&quot;} {:command &quot;;;defining namespace\n(ns scraper\n  (:require [net.cgrand.enlive-html :as html]\n            [clojure.data.json :as json]))\n\n;;binding parks .html paths to variabes for clarity\n(def letenske-sady \&quot;./resources/parks_html/letenske_sady.html\&quot;)\n(def bertramka \&quot;./resources/parks_html/bertramka.html\&quot;)\n(def frantiskanska-zahrada \&quot;./resources/parks_html/frantiskanska_zahrada.html\&quot;)\n(def kampa \&quot;./resources/parks_html/kampa.html\&quot;)\n(def kinskeho-zahrada \&quot;./resources/parks_html/kinskeho_zahrada.html\&quot;)\n(def klamovka \&quot;./resources/parks_html/klamovka.html\&quot;)\n(def ladronka \&quot;./resources/parks_html/ladronka.html\&quot;)\n(def obora-hvezda \&quot;./resources/parks_html/obora_hvezda.html\&quot;)\n(def petrin \&quot;./resources/parks_html/petrin.html\&quot;)\n(def riegrovy-sady \&quot;./resources/parks_html/riegrovy_sady.html\&quot;)\n(def stromovka \&quot;./resources/parks_html/stromovka.html\&quot;)\n(def vojanovy-sady \&quot;./resources/parks_html/vojanovy_sady.html\&quot;)\n(def vysehrad \&quot;./resources/parks_html/vysehrad.html\&quot;)\n&quot;, :offset 951, :ns &quot;symbolic-computation-ica1.core&quot;} {:command &quot;(def parks-str-list (map str (keys (ns-publics 'scraper))))&quot;, :offset 59, :ns &quot;scraper&quot;} {:command &quot;(defn text-extract-keys [park-name]\n  (text-extract park-name true \&quot;key\&quot;))\n\n(defn text-extract-values [park-name]\n  (text-extract park-name true \&quot;value\&quot;))&quot;, :offset 154, :ns &quot;scraper&quot;} {:command &quot;(defn sanitizer [str]\n  (clojure.string/replace\n    (clojure.string/replace\n      (clojure.string/replace\n        str\n        #\&quot;\\s+\\S*$\&quot; \&quot;\&quot;)\n      #\&quot; \&quot; \&quot;_\&quot;)\n    #\&quot;:\&quot; \&quot;\&quot;)\n  )&quot;, :offset 173, :ns &quot;scraper&quot;} {:command &quot;(defn key-sanitizer [park-name]\n  (map keyword\n       (map\n         sanitizer (text-extract-keys park-name))))\n&quot;, :offset 111, :ns &quot;scraper&quot;} {:command &quot;;; takes string\n(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (map html/text\n                           (html/select\n                             (html/html-resource (java.io.File. (eval (read-string park-name))))\n                             [:p.perex])))))&quot;, :offset 333, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (loop [park-lst park-list]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-list)))\n      (recur (rest parks-list)))))&quot;, :offset 228, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (loop [park-lst park-list]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-list)))\n      (recur (rest park-list)))))&quot;, :offset 227, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-list)))\n      (recur (rest park-list)))))&quot;, :offset 326, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-list)))\n      (recur (rest park-list)))))&quot;, :offset 327, :ns &quot;scraper&quot;} {:command &quot;(def parks-str-list\n  '(\&quot;letenske-sady\&quot;\n    \&quot;stromovka\&quot;\n    \&quot;klamovka\&quot;\n    \&quot;parks-str-list\&quot;\n    \&quot;bertramka\&quot;\n    \&quot;vysehrad\&quot;\n    \&quot;kinskeho-zahrada\&quot;\n    \&quot;petrin\&quot;\n    \&quot;riegrovy-sady\&quot;\n    \&quot;obora-hvezda\&quot;\n    \&quot;vojanovy-sady\&quot;\n    \&quot;kampa\&quot;\n    \&quot;frantiskanska-zahrada\&quot;\n    \&quot;ladronka\&quot;))&quot;, :offset 274, :ns &quot;scraper&quot;} {:command &quot;(def parks-str-list nil)&quot;, :offset 24, :ns &quot;scraper&quot;} {:command &quot;(def parks-str-list\n  '(\&quot;letenske-sady\&quot;\n    \&quot;stromovka\&quot;\n    \&quot;klamovka\&quot;\n    \&quot;bertramka\&quot;\n    \&quot;vysehrad\&quot;\n    \&quot;kinskeho-zahrada\&quot;\n    \&quot;petrin\&quot;\n    \&quot;riegrovy-sady\&quot;\n    \&quot;obora-hvezda\&quot;\n    \&quot;vojanovy-sady\&quot;\n    \&quot;kampa\&quot;\n    \&quot;frantiskanska-zahrada\&quot;\n    \&quot;ladronka\&quot;))&quot;, :offset 253, :ns &quot;scraper&quot;} {:command &quot;(println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))&quot;, :offset 90, :ns &quot;scraper&quot;} {:command &quot;(println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first parks-str-list)))&quot;, :offset 95, :ns &quot;scraper&quot;} {:command &quot;(eval (read-string letenske-sady))&quot;, :offset 34, :ns &quot;scraper&quot;} {:command &quot;(eval (read-string \&quot;letenske_sady\&quot;))&quot;, :offset 36, :ns &quot;scraper&quot;} {:command &quot;(read-string \&quot;letenske_sady\&quot;)&quot;, :offset 29, :ns &quot;scraper&quot;} {:command &quot;(read-string \&quot;letenske-sady\&quot;)&quot;, :offset 29, :ns &quot;scraper&quot;} {:command &quot;(eval (read-string \&quot;letenske-sady\&quot;))&quot;, :offset 36, :ns &quot;scraper&quot;} {:command &quot;(map html/text\n     (html/select\n       (html/html-resource (java.io.File. (eval (read-string \&quot;letenske-sady\&quot;))))\n       [:p.perex]))&quot;, :offset 133, :ns &quot;scraper&quot;} {:command &quot;(map html/text\n     (html/select\n       (html/html-resource (java.io.File. letenske-sady))\n       [:p.perex]))&quot;, :offset 110, :ns &quot;scraper&quot;} {:command &quot;(str (map html/text\n     (html/select\n       (html/html-resource (java.io.File. letenske-sady))\n       [:p.perex])))&quot;, :offset 116, :ns &quot;scraper&quot;} {:command &quot;(str @(map html/text\n     (html/select\n       (html/html-resource (java.io.File. letenske-sady))\n       [:p.perex])))&quot;, :offset 117, :ns &quot;scraper&quot;} {:command &quot;(first (map html/text\n     (html/select\n       (html/html-resource (java.io.File. letenske-sady))\n       [:p.perex])))&quot;, :offset 118, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (first\n                        (map html/text\n                             (html/select\n                               (html/html-resource (java.io.File. (eval (read-string park-name))))\n                               [:p.perex]))))))&quot;, :offset 355, :ns &quot;scraper&quot;} {:command &quot;(map-generator (first parks-str-list))&quot;, :offset 38, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-list)))\n      (recur (rest park-lst)))))&quot;, :offset 326, :ns &quot;scraper&quot;} {:command &quot;(json-generator (first parks-str-list))&quot;, :offset 39, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (if (not (nil? (rest park-lst)))\n      (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n      (recur (rest park-lst)))))&quot;, :offset 327, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-lst)))\n      (recur (rest park-lst)))))&quot;, :offset 325, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-lst)))\n      (recur (rest park-lst))\n      nil)))&quot;, :offset 335, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (not (nil? (rest park-lst)))\n      (do\n        (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n        (recur (rest park-lst)))\n      nil)))&quot;, :offset 446, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (if (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n      nil)))&quot;, :offset 335, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))))&quot;, :offset 320, :ns &quot;scraper&quot;} {:command &quot;parks-str-list&quot;, :offset 14, :ns &quot;scraper&quot;} {:command &quot;(nil? (rest '(\&quot;test\&quot;)))&quot;, :offset 23, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (and (println (rest park-lst)) (not (nil? (rest park-lst))) (recur (rest park-lst)))))&quot;, :offset 346, :ns &quot;scraper&quot;} {:command &quot;(println json-generator)&quot;, :offset 24, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (and (println (rest park-lst)) (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 351, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    ((when (and\n             (not (nil? (rest park-lst)))\n             (recur (rest park-lst)))\n       nil)\n     )\n    ))&quot;, :offset 377, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-lst)))\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 325, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    ((let [park-map (map-generator (first park-lst))]\n       ;(spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n       (println \&quot;./resources/parks_json/park-description.json\&quot; park-map)))\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 444, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator (first park-lst))]\n      ;(spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      (println \&quot;./resources/parks_json/park-description.json\&quot; park-map))\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 440, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator (first park-lst))]\n      (spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n      ))\n  &quot;, :offset 20} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator (first park-lst))]\n      (spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      ;(println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n      )\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 447, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (println \&quot;./resources/parks_json/park-description.json\&quot; (map-generator (first park-list)))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator\n                     (json/write-str (first park-lst)))]\n      (spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      ;(println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n      )\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 485, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (spit \&quot;./resources/parks_json/park-description.json\&quot; (json/write-str\n                                                         (map-generator (first park-list))))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator\n                     (json/write-str (first park-lst)))]\n      (spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      ;(println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n      )\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 556, :ns &quot;scraper&quot;} {:command &quot;(json-generator parks-str-list)&quot;, :offset 31, :ns &quot;scraper&quot;} {:command &quot;(ns scraper\n  (:require [net.cgrand.enlive-html :as html]\n            [clojure.data.json :as json]))\n\n;;binding parks .html paths to variabes for clarity\n(def letenske-sady \&quot;./resources/parks_html/letenske_sady.html\&quot;)\n(def bertramka \&quot;./resources/parks_html/bertramka.html\&quot;)\n(def frantiskanska-zahrada \&quot;./resources/parks_html/frantiskanska_zahrada.html\&quot;)\n(def kampa \&quot;./resources/parks_html/kampa.html\&quot;)\n(def kinskeho-zahrada \&quot;./resources/parks_html/kinskeho_zahrada.html\&quot;)\n(def klamovka \&quot;./resources/parks_html/klamovka.html\&quot;)\n(def ladronka \&quot;./resources/parks_html/ladronka.html\&quot;)\n(def obora-hvezda \&quot;./resources/parks_html/obora_hvezda.html\&quot;)\n(def petrin \&quot;./resources/parks_html/petrin.html\&quot;)\n(def riegrovy-sady \&quot;./resources/parks_html/riegrovy_sady.html\&quot;)\n(def stromovka \&quot;./resources/parks_html/stromovka.html\&quot;)\n(def vojanovy-sady \&quot;./resources/parks_html/vojanovy_sady.html\&quot;)\n(def vysehrad \&quot;./resources/parks_html/vysehrad.html\&quot;)&quot;, :offset 929, :ns &quot;symbolic-computation-ica1.core&quot;} {:command &quot;(def parks-list\n  '(\&quot;letenske-sady\&quot;\n     \&quot;stromovka\&quot;\n     \&quot;klamovka\&quot;\n     \&quot;bertramka\&quot;\n     \&quot;vysehrad\&quot;\n     \&quot;kinskeho-zahrada\&quot;\n     \&quot;petrin\&quot;\n     \&quot;riegrovy-sady\&quot;\n     \&quot;obora-hvezda\&quot;\n     \&quot;vojanovy-sady\&quot;\n     \&quot;kampa\&quot;\n     \&quot;frantiskanska-zahrada\&quot;\n     \&quot;ladronka\&quot;))&quot;, :offset 261, :ns &quot;scraper&quot;} {:command &quot;;; extract text from relevant html tags\n(defn text-extract\n  \&quot;function takes file/park name and a class (as clojure string)\n  returns text content of matching tags/attributes\&quot;\n  ([park-name]\n   (map html/text\n        (html/select\n          (html/html-resource (java.io.File. park-name))\n          [:div.js-tabbed-content\n           :p]\n          )))\n\n  ;if bool false, joker should be a html class from the lst above\n  ;if bool is true, joker should be either key or value\n  ([park-name bool wild-card]\n   (if (false? bool)\n     (map html/text\n          (html/select\n            (html/html-resource (java.io.File. park-name))\n            [:div.js-tabbed-content\n             (keyword (str \&quot;p.\&quot; wild-card))]\n            ))\n\n     ;getting the keys for later JSON processing\n     (if (= wild-card \&quot;key\&quot;)\n       (map html/text\n            (html/select\n              (html/html-resource (java.io.File. park-name))\n              [:div.js-tabbed-content\n               :p\n               :strong]\n              ))\n\n       ;;getting the values for later JSON processing\n       ;;the n-th child 2 selects the font tag\n       ;;that comes as a second desendent of p tag\n       (if (= wild-card \&quot;value\&quot;)\n         (map html/text\n              (html/select\n                (html/html-resource (java.io.File. park-name))\n                [:div.js-tabbed-content\n                 :p\n                 [:font (html/nth-child 2)]]\n                ))))\n     )))&quot;, :offset 1440, :ns &quot;scraper&quot;} {:command &quot;;;exctarcting keys and values of from paks pages\n(defn text-extract-keys [park-name]\n  (text-extract park-name true \&quot;key\&quot;))\n\n(defn text-extract-values [park-name]\n  (text-extract park-name true \&quot;value\&quot;))&quot;, :offset 203, :ns &quot;scraper&quot;} {:command &quot;;;sanitizing output\n(defn sanitizer [str]\n  (clojure.string/replace\n    (clojure.string/replace\n      (clojure.string/replace\n        str\n        #\&quot;\\s+\\S*$\&quot; \&quot;\&quot;)\n      #\&quot; \&quot; \&quot;_\&quot;)\n    #\&quot;:\&quot; \&quot;\&quot;)\n  )&quot;, :offset 193, :ns &quot;scraper&quot;} {:command &quot;\n(defn key-sanitizer [park-name]\n  (map keyword\n       (map\n         sanitizer (text-extract-keys park-name))))\n\n;; takes string\n(defn map-generator [park-name]\n  (assoc {} (keyword park-name)\n            (assoc {} :description\n                      (first\n                        (map html/text\n                             (html/select\n                               (html/html-resource (java.io.File. (eval (read-string park-name))))\n                               [:p.perex]))))))&quot;, :offset 484, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (spit \&quot;./resources/parks_json/park-description.json\&quot; (json/write-str\n                                                         (map-generator (first park-list))))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (map-generator\n                     (json/write-str (first park-lst)))]\n      ;(spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      (println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n      )\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 556, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (let [map (json/write-str\n              (map-generator (first park-list)))]\n\n    (spit \&quot;./resources/parks_json/park-description.json\&quot; map)\n    (loop [park-lst (rest park-list)]\n      (let [park-map (json/write-str\n                       (map-generator (first park-lst) map))]\n        ;(spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n        (println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n        )\n      (and (not (nil? (rest park-lst)))\n           (recur (rest park-lst)))\n      )))&quot;, :offset 565, :ns &quot;scraper&quot;} {:command &quot;(defn json-generator [park-list]\n  (spit \&quot;./resources/parks_json/park-description.json\&quot; (json/write-str\n                                                         (map-generator (first park-list))))\n  (loop [park-lst (rest park-list)]\n    (let [park-map (json/write-str\n                     (map-generator (first park-lst)))]\n      ;(spit \&quot;./resources/parks_json/park-description.json\&quot; park-map :append true)\n      (println \&quot;./resources/parks_json/park-description.json\&quot; park-map)\n      )\n    (and (not (nil? (rest park-lst))) (recur (rest park-lst)))\n    ))&quot;, :offset 556, :ns &quot;scraper&quot;} {:command &quot;(json-generator parks-list)&quot;, :offset 27, :ns &quot;scraper&quot;} {:command &quot;(merge (map-generator letenske-sady) (map-generator kampa))&quot;, :offset 59, :ns &quot;scraper&quot;} {:command &quot;;;defining namespace\n(ns scraper\n  (:require [net.cgrand.enlive-html :as html]\n            [clojure.data.json :as json]))\n\n;;binding parks .html paths to variabes for clarity\n(def letenske-sady \&quot;./resources/parks_html/letenske_sady.html\&quot;)\n(def bertramka \&quot;./resources/parks_html/bertramka.html\&quot;)\n(def frantiskanska-zahrada \&quot;./resources/parks_html/frantiskanska_zahrada.html\&quot;)\n(def kampa \&quot;./resources/parks_html/kampa.html\&quot;)\n(def kinskeho-zahrada \&quot;./resources/parks_html/kinskeho_zahrada.html\&quot;)\n(def klamovka \&quot;./resources/parks_html/klamovka.html\&quot;)\n(def ladronka \&quot;./resources/parks_html/ladronka.html\&quot;)\n(def obora-hvezda \&quot;./resources/parks_html/obora_hvezda.html\&quot;)\n(def petrin \&quot;./resources/parks_html/petrin.html\&quot;)\n(def riegrovy-sady \&quot;./resources/parks_html/riegrovy_sady.html\&quot;)\n(def stromovka \&quot;./resources/parks_html/stromovka.html\&quot;)\n(def vojanovy-sady \&quot;./resources/parks_html/vojanovy_sady.html\&quot;)\n(def vysehrad \&quot;./resources/parks_html/vysehrad.html\&quot;)&quot;, :offset 950, :ns &quot;symbolic-computation-ica1.core&quot;} {:command &quot;;;parks of files references\n(def parks-list\n  '(\&quot;letenske-sady\&quot;\n     \&quot;stromovka\&quot;\n     \&quot;klamovka\&quot;\n     \&quot;bertramka\&quot;\n     \&quot;vysehrad\&quot;\n     \&quot;kinskeho-zahrada\&quot;\n     \&quot;petrin\&quot;\n     \&quot;riegrovy-sady\&quot;\n     \&quot;obora-hvezda\&quot;\n     \&quot;vojanovy-sady\&quot;\n     \&quot;kampa\&quot;\n     \&quot;frantiskanska-zahrada\&quot;\n     \&quot;ladronka\&quot;))&quot;, :offset 289, :ns &quot;scraper&quot;} {:command &quot;(defn text-extract\n  \&quot;function takes file/park name and a class (as clojure string)\n  returns text content of matching tags/attributes\&quot;\n  ([park-name]\n   (map html/text\n        (html/select\n          (html/html-resource (java.io.File. park-name))\n          [:div.js-tabbed-content\n           :p]\n          )))\n\n  ;if bool false, joker should be a html class from the lst above\n  ;if bool is true, joker should be either key or value\n  ([park-name bool wild-card]\n   (if (false? bool)\n     (map html/text\n          (html/select\n            (html/html-resource (java.io.File. park-name))\n            [:div.js-tabbed-content\n             (keyword (str \&quot;p.\&quot; wild-card))]\n            ))\n\n     ;getting the keys for later JSON processing\n     (if (= wild-card \&quot;key\&quot;)\n       (map html/text\n            (html/select\n              (html/html-resource (java.io.File. park-name))\n              [:div.js-tabbed-content\n               :p\n               :strong]\n              ))\n\n       ;;getting the values for later JSON processing\n       ;;the n-th child 2 selects the font tag\n       ;;that comes as a second desendent of p tag\n       (if (= wild-card \&quot;value\&quot;)\n         (map html/text\n              (html/select\n                (html/html-resource (java.io.File. park-name))\n                [:div.js-tabbed-content\n                 :p\n                 [:font (html/nth-child 2)]]\n                ))))\n     )))&quot;, :offset 1400, :ns &quot;scraper&quot;} {:command &quot;\n;;exctarcting keys and values of from paks pages\n(defn text-extract-keys [park-name]\n  (text-extract park-name true \&quot;key\&quot;))\n\n(defn text-extract-values [park-name]\n  (text-extract park-name true \&quot;value\&quot;))\n\n;;sanitizing output\n(defn sanitizer [str]\n  (clojure.string/replace\n    (clojure.string/replace\n      (clojure.string/replace\n        str\n        #\&quot;\\s+\\S*$\&quot; \&quot;\&quot;)\n      #\&quot; \&quot; \&quot;_\&quot;)\n    #\&quot;:\&quot; \&quot;\&quot;)\n  )&quot;, :offset 399, :ns &quot;scraper&quot;} {:command &quot;(defn key-sanitizer [park-name]\n  (map keyword\n       (map\n         sanitizer (text-extract-keys park-name))))&quot;, :offset 110, :ns &quot;scraper&quot;} {:command &quot;(defn map-generator\n\n  ([park-name]\n   (assoc {} (keyword park-name)\n             (assoc {} :description\n                       (first\n                         (map html/text\n                              (html/select\n                                (html/html-resource (java.io.File. (eval (read-string park-name))))\n                                [:p.perex]))))))\n\n  ([park-name map]\n   (assoc map (keyword park-name)\n              (assoc {} :description\n                        (first\n                          (map html/text\n                               (html/select\n                                 (html/html-resource (java.io.File. (eval (read-string park-name))))\n                                 [:p.perex])))))))&quot;, :offset 725, :ns &quot;scraper&quot;} {:command &quot;(ns scraper\n  (:require [net.cgrand.enlive-html :as html]\n            [clojure.data.json :as json]))&quot;, :offset 100, :ns &quot;scraper&quot;} {:command &quot;(map-generator letenske-sady {:description \&quot;test\&quot;})&quot;, :offset 51, :ns &quot;scraper&quot;} {:command &quot;(map-generator letenske-sady)&quot;, :offset 29, :ns &quot;scraper&quot;}], :remote []}}</component>
+  <component name="RunManager">
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="v-repl" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <module name="prague_parks_chatbot" />
+      <setting name="displayName" value="v-repl" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="repl-project" type="ClojureScriptRunConfiguration" factoryName="Clojure Script">
+      <module name="prague_parks_chatbot" />
+      <setting name="path" value="D:\Prague college_courses\Symbolic Computation 2104\symbolic_computation_ica1\project.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scraper" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="prague_parks_chatbot" />
+      <setting name="path" value="$PROJECT_DIR$/src/scraper.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src" />
+      <method v="2" />
+    </configuration>
+    <configuration name="symbolic-computation-ica1.core" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="prague_parks_chatbot" />
+      <setting name="path" value="$PROJECT_DIR$/src/symbolic_computation_ica1/core.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/symbolic_computation_ica1" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Clojure Application.repl-project" />
+      <item itemvalue="Clojure Application.symbolic-computation-ica1.core" />
+      <item itemvalue="Clojure Application.scraper" />
+      <item itemvalue="Clojure REPL.v-repl" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure Application.scraper" />
+        <item itemvalue="Clojure Application.symbolic-computation-ica1.core" />
+        <item itemvalue="Clojure Application.scraper" />
+        <item itemvalue="Clojure Application.symbolic-computation-ica1.core" />
+        <item itemvalue="Clojure Application.scraper" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2250c14e-a7b1-47cd-8ad8-c62286d87e2f" name="Changes" comment="" />
+      <created>1635081335781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635081335781</updated>
+      <workItem from="1635081337473" duration="2671000" />
+      <workItem from="1635171595004" duration="284000" />
+      <workItem from="1635853058725" duration="1542000" />
+      <workItem from="1635854806061" duration="2003000" />
+      <workItem from="1635945144998" duration="107000" />
+      <workItem from="1635945485426" duration="26727000" />
+      <workItem from="1636384963134" duration="10092000" />
+      <workItem from="1636450186215" duration="2181000" />
+      <workItem from="1636460896578" duration="3632000" />
+      <workItem from="1636551539898" duration="4515000" />
+      <workItem from="1636629649661" duration="7998000" />
+      <workItem from="1636813664632" duration="7905000" />
+      <workItem from="1636971810971" duration="16141000" />
+      <workItem from="1637071548083" duration="6539000" />
+      <workItem from="1637168230797" duration="15799000" />
+      <workItem from="1637347207003" duration="106000" />
+      <workItem from="1637347397073" duration="1453000" />
+      <workItem from="1637503735141" duration="6727000" />
+    </task>
+    <task id="LOCAL-00001" summary="lein project">
+      <created>1635081506785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635081506785</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lein project">
+      <created>1635172139173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635172139173</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding enlive dependency for scraper.clj">
+      <created>1635855450302</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635855450302</updated>
+    </task>
+    <task id="LOCAL-00004" summary="importing lein libraries">
+      <created>1636025108410</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636025108410</updated>
+    </task>
+    <task id="LOCAL-00005" summary="importing translated prague parks pages as html files">
+      <created>1636025811801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636025811801</updated>
+    </task>
+    <task id="LOCAL-00006" summary="importing parks paths/files">
+      <created>1636025872419</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636025872419</updated>
+    </task>
+    <task id="LOCAL-00007" summary="renaming scraper.clj">
+      <created>1636025948783</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636025948783</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working scraping function">
+      <created>1636038105739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636038105739</updated>
+    </task>
+    <task id="LOCAL-00009" summary="few comments, more todo list">
+      <created>1636049601237</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636049601237</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Lein's dependency information, namespace changes">
+      <created>1636050140559</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1636050140559</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Lein's dependency information, namespace changes">
+      <created>1636050153668</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636050153668</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactoring the text-extract function to efficiently extract the keys and values separately depending on the input/arguments of the function + few examples to write JSON">
+      <created>1636409776130</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409776130</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactoring and fixing the nesting in &quot;if&quot; functions in the text-extract function">
+      <created>1636552231486</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1636552231486</updated>
+    </task>
+    <task id="LOCAL-00014" summary="sanitizer function added to sanitize keywords for the map keys">
+      <created>1636556085946</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636556085946</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changing path/location of scraper.clj">
+      <created>1636706034013</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636706034013</updated>
+    </task>
+    <task id="LOCAL-00016" summary="map generator for parks description is done + adding list of parks a strings">
+      <created>1637000024865</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637000024865</updated>
+    </task>
+    <task id="LOCAL-00017" summary="json generator for park description and adding list of parks">
+      <created>1637023583146</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637023583146</updated>
+    </task>
+    <task id="LOCAL-00018" summary="refactoring the function JSON of the parks description and generating the JSON file">
+      <created>1637076396730</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637076396731</updated>
+    </task>
+    <task id="LOCAL-00019" summary="first attempt in input sanitization">
+      <created>1637180812610</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1637180812610</updated>
+    </task>
+    <task id="LOCAL-00020" summary="#5 first version of sanitizing function introduced to format.clj">
+      <created>1637186666418</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1637186666418</updated>
+    </task>
+    <task id="LOCAL-00021" summary="#6 added print-bot function to format bot output in  chatbot.clj">
+      <created>1637194114527</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1637194114527</updated>
+    </task>
+    <task id="LOCAL-00022" summary="#15 adding comments for functions, changing name space for consistency, removing non-used code blocks">
+      <created>1637505887203</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1637505887203</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fixing the namespace">
+      <created>1637506025870</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1637506025870</updated>
+    </task>
+    <task id="LOCAL-00024" summary="removing unnecessary ;; comments">
+      <created>1637506813820</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1637506813820</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="lein project" />
+    <MESSAGE value="adding enlive dependency for scraper.clj" />
+    <MESSAGE value="importing lein libraries" />
+    <MESSAGE value="importing translated prague parks pages as html files" />
+    <MESSAGE value="importing parks paths/files" />
+    <MESSAGE value="renaming scraper.clj" />
+    <MESSAGE value="working scraping function" />
+    <MESSAGE value="few comments, more todo list" />
+    <MESSAGE value="Lein's dependency information, namespace changes" />
+    <MESSAGE value="refactoring the text-extract function to efficiently extract the keys and values separately depending on the input/arguments of the function + few examples to write JSON" />
+    <MESSAGE value="refactoring and fixing the nesting in &quot;if&quot; functions in the text-extract function (issue #1)" />
+    <MESSAGE value="sanitizer function added to sanitize keywords for the map keys" />
+    <MESSAGE value="Changing path/location of scraper.clj" />
+    <MESSAGE value="map generator for parks description is done + adding list of parks a strings" />
+    <MESSAGE value="json generator for park description and adding list of parks" />
+    <MESSAGE value="refactoring the function JSON of the parks description and generating the JSON file" />
+    <MESSAGE value="first attempt in input sanitization" />
+    <MESSAGE value="#5 first version of sanitizing function introduced to format.clj" />
+    <MESSAGE value="#6 added print-bot function to format bot output in  chatbot.clj" />
+    <MESSAGE value="#15 adding comments for functions, changing name space for consistency, removing non-used code blocks" />
+    <MESSAGE value="fixing the namespace" />
+    <MESSAGE value="removing unnecessary ;; comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing unnecessary ;; comments" />
+  </component>
+</project>
