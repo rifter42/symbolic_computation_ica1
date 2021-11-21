@@ -1,18 +1,22 @@
 (ns symbolic-computation-ica1.format
   (:require [clojure.string :as str]))
 
-
-(defn recommed-attraction [attr-list]
+(defn recommed-attraction
+  "Selects a random attraction from the data and suggests user to visit it"
+  [attr-list]
   (let [random-attraction (rand-nth (str/split attr-list #", "))]
     (str "How about visiting the " random-attraction "? Sounds interesting!")))
 
-(defn replace-ing [key]
+(defn replace-ing
+  "Removes ing endings from existing keys based on language rules"
+  [key]
   (if (= :skiing (keyword key))
     (str/replace key #"ing" "")
     (str/replace key #"ing" "e")))
 
-;;Formatting user input
-(defn sanitizer [string]
+(defn sanitizer
+  "Sanitises user input before passing it for matching"
+  [string]
   (let [sentence (str/replace
                    (str/lower-case string)
                    #"[;,.!?\\]" "")]
@@ -30,7 +34,10 @@
       sentence))
   )
 
-(defn translate-values-found [park key matched-info]
+(defn translate-values-found
+  "Formats a response based on the results of the matching when the results for
+  a park were found"
+  [park key matched-info]
   (cond
     (= :attractions (keyword key))
       (format "Available %s in %s are: %s.\n%s"
@@ -58,6 +65,9 @@
     (and (= :dogs (keyword key)) (not matched-info))
       (format "Sorry, %s aren't allowed in %s." key park)))
 
-(defn translate-values-not-found [key]
+(defn translate-values-not-found
+  "Formats a response based on the results of the matching when the results for
+  a park were NOT found"
+  [key]
   (format "Unfortunately, there's no information on %s in this park.\nAsk me about %s in"
   key key))
