@@ -9,6 +9,7 @@
                  [org.clojure/data.json "2.4.0"]]
   :plugins [[lein-codox "0.10.8"]]
   :codox {:output-path "docs"
+          :doc-files ["docs/intro.md", "docs/implementation.md"]
           :metadata {:doc/format :markdown}
           :themes [:rdash]}
   :repl-options {:init-ns symbolic-computation-ica1.core}
