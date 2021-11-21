@@ -13,7 +13,6 @@ To exit the application, type quit.
 
 (defn start! []
   (println welcome-message)
-  (matching/init)
   (println "Hi! I'm here to provide information about various parks of Prague.")
   (println (str "If you already know which park you want to visit, just type its name"
             " and I'll give you a small overview.\nCurrently, I can tell you about"
