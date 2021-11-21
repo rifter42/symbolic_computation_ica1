@@ -11,6 +11,9 @@ The chatbot is designed to guide you on your journey through Prague parks.
 To exit the application, type quit.
 ========================================================================")
 
+(def hist-data "Historical data for parks"
+  (json/read-str (slurp "resources/parks_json/park-description.json") :key-fn keyword))
+
 (def user-name "Username to display at the beginning of user input"
   (ref "User"))
 
@@ -70,8 +73,9 @@ To exit the application, type quit.
                  (formatting/translate-values-not-found (name info))
                  (matching/get-parks-with-keyword info)))
       (not (nil? park))
-        (print-bot (format "History about %s incoming...\n\nI can tell you about %s in %s"
-                 (name park) (matching/get-parks-activities park) (name park)))
+        (print-bot (format "%s \n\nI can tell you about %s in %s."
+                  (get (get hist-data park) :description)
+                 (matching/get-parks-activities park) (name park)))
       (not (nil? info))
         (print-bot (format "I have information about %s in %s."
                  (name info) (matching/get-parks-with-keyword info))))))
