@@ -52,7 +52,7 @@ To exit the application, type quit.
 (defn exit?
   "Checks if user input contains one of the exit words"
   [input]
-  (.contains '("quit", "bye", "exit") input))
+  (.contains '("quit" "bye" "exit") input))
 
 (defn exit!
   "Prints goodbye message before exiting"
@@ -84,6 +84,6 @@ To exit the application, type quit.
         (print-bot (format "I have information about %s in %s."
                     (name info)
                     (formatting/format-park-names (matching/get-parks-with-keyword info))))
-                    
+
       :else
         (print-bot "Sorry, I'm not sure what you mean"))))
