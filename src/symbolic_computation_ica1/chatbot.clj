@@ -63,7 +63,6 @@ To exit the application, type quit.
   "Main bot fucntion, contains answer logic based on the kind of information
   matched from user input. Displays bot answer to the user."
   [input]
-  (println (formatting/sanitizer input))
   (let [[park info park-info] (matching/match (formatting/sanitizer input))]
     (cond
       (and (not (nil? park)) (not (nil? info)) (not (nil? park-info)))
@@ -80,4 +79,6 @@ To exit the application, type quit.
                     (formatting/keyword-to-park park)))
       (not (nil? info))
         (print-bot (format "I have information about %s in %s."
-                    (name info) (matching/get-parks-with-keyword info))))))
+                    (name info) (matching/get-parks-with-keyword info)))
+      :else
+        (print-bot "Sorry, I'm not sure what you mean"))))
