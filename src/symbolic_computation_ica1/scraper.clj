@@ -41,10 +41,11 @@
 ;;i_hriste, i_mhd, i_gps, i_parking, i_cesty, i_provoz
 ;;i_doba
 
-;; extract text from relevant html tags
 (defn text-extract
   "function takes an html file/park name and a class (as clojure string)
-  and a wild-card element. it returns text content of matching tags/attributes"
+  and a wild-card element. it returns text content of matching tags/attributes
+  if bool false, wild-card should be a html class from the list above
+  if bool is true, wild-card should be either key or value as trings"
   ([park-name]
    (map html/text
         (html/select
@@ -53,8 +54,6 @@
            :p]
           )))
 
-  ;if bool false, wild-card should be a html class from the list above
-  ;if bool is true, wild-card should be either "key" or "value"
   ([park-name bool wild-card]
    (if (false? bool)
     (map html/text
@@ -64,7 +63,6 @@
            (keyword (str "p." wild-card))]
           ))
 
-    ;getting the keys for later JSON processing
     (if (= wild-card "key")
       (map html/text
            (html/select
@@ -74,9 +72,6 @@
               :strong]
              ))
 
-      ;;getting the values for later JSON processing
-      ;; the n-th child 2 selects the font tag
-      ;;that comes as a second descendant of p tag
       (if (= wild-card "value")
         (map html/text
              (html/select
@@ -109,13 +104,13 @@
     #":" "")
   )
 
-;;sanitizing keywords
 (defn key-sanitizer [park-name]
+  "takes an html file and returns
+  sanitized keywords after extracting them from the text"
   (map keyword
        (map
          sanitizer (text-extract-keys park-name))))
 
-;; takes string
 (defn map-generator
   "takes park name as a string only or a map in addition to the string
    and, it constructs a map of the park name, and it's description
@@ -129,7 +124,6 @@
                                 (html/html-resource (java.io.File. (eval (read-string park-name))))
                                 [:p.perex]))))))
 
-  ;;merging
   ([park-name map]
    (merge (map-generator park-name) map)))
 
