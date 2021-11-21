@@ -1,4 +1,4 @@
-(ns symbolic-computation-ica1.format
+(ns symbolic-computation-ica1.formatting
   (:require [clojure.string :as str]))
 
 (defn recommed-attraction
@@ -33,6 +33,11 @@
     (str/replace #"vojanovy sady" "vojanovy-sady")
     (str/replace #"frantiskanska zahrada" "frantiskanska-zahrada")))
 
+(defn format-park-names
+  "Turns a list of park names into a formatted string"
+  [park-list]
+  (str/join ", " (map keyword-to-park park-list)))
+
 (defn sanitizer
   "Sanitises user input before passing it for matching"
   [input]
@@ -48,29 +53,40 @@
   (cond
     (= :attractions (keyword key))
       (format "Available %s in %s are: %s.\n%s"
-          key park matched-info (recommed-attraction matched-info))
+          key (keyword-to-park park) matched-info (recommed-attraction matched-info))
+
     (= :transportation (keyword key))
-      (format "You can get to %s by: %s." park matched-info)
+      (format "You can get to %s by: %s." (keyword-to-park park) matched-info)
+
     (and (contains? #{:wc, :playground, :parking, :restaurant} (keyword key))
          matched-info)
-      (format "Yes, %s has %s %s." park (if (= :parking (keyword key)) "" "a") key)
+      (format "Yes, %s has %s %s."
+        (keyword-to-park park) (if (= :parking (keyword key)) "" "a") key)
+
     (and (contains? #{:wc, :playground, :parking, :restaurant} (keyword key))
          (not matched-info))
       (format "Unfortunately, there's no %s." key)
+
     (and (contains? #{:biking, :skating, :skiing} (keyword key))
          matched-info)
-      (format "Yes, you can %s in %s!" (replace-ing key) park)
+      (format "Yes, you can %s in %s!" (replace-ing key) (keyword-to-park park))
+
     (and (contains? #{:biking, :skating, :skiing} (keyword key))
          (not matched-info))
-      (format "Unfortunately, you can't %s in %s." (replace-ing (keyword key)) park)
+      (format "Unfortunately, you can't %s in %s."
+        (replace-ing (keyword key)) (keyword-to-park park))
+
     (and (= :sports (keyword key)) matched-info)
-      (format "Yes, you can do %s in %s." key park)
+      (format "Yes, you can do %s in %s." key (keyword-to-park park))
+
     (and (= :sports (keyword key)) (not matched-info))
-      (format "Sorry, you can't do %s in %s." key park)
+      (format "Sorry, you can't do %s in %s." key (keyword-to-park park))
+
     (and (= :dogs (keyword key)) matched-info)
-      (format "Yes, %s are allowed in %s." key park)
+      (format "Yes, %s are allowed in %s." key (keyword-to-park park))
+
     (and (= :dogs (keyword key)) (not matched-info))
-      (format "Sorry, %s aren't allowed in %s." key park)))
+      (format "Sorry, %s aren't allowed in %s." key (keyword-to-park park))))
 
 (defn translate-values-not-found
   "Formats a response based on the results of the matching when the results for
