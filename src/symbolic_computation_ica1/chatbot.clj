@@ -11,8 +11,13 @@ The chatbot is designed to guide you on your journey through Prague parks.
 To exit the application, type quit.
 ========================================================================")
 
-(def user-name "Username to display at the beggining of user input"
-  (ref "User> "))
+(def user-name "Username to display at the beginning of user input"
+  (ref "User"))
+
+(defn set-name!
+  "Sets user-name variable"
+  [name]
+  (dosync (ref-set user-name name)))
 
 (defn print-bot
   "Prints bot messages with a prompt at the beginning"
@@ -23,7 +28,7 @@ To exit the application, type quit.
 (defn get-input
   "Get user input with a user-name at the beginning"
   []
-  (print @user-name)
+  (print (str @user-name "> "))
   (flush)
   (clojure.string/trim-newline (read-line)))
 
@@ -33,7 +38,9 @@ To exit the application, type quit.
   []
   (println welcome-message)
   (print-bot "Hi! I'm here to provide information about various parks of Prague.")
-  (print-bot (str "If you already know which park you want to visit, just type its name"
+  (print-bot "But first, tell me your name:")
+  (set-name! (get-input))
+  (print-bot (str "Hi " @user-name "! If you already know which park you want to visit, just type its name"
             " and I'll give you a small overview.\nCurrently, I can tell you about"
             " the following parks: " (clojure.string/join ", " (map name matching/park-names))))
   (print-bot (str "If you aren't sure which park to visit, ask about the activity"
