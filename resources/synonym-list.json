@@ -6,6 +6,6 @@
  "sports": ["sport", "exercise", "athlet", "fit", "train", "workout"],
  "playground": ["play"],
  "dogs": ["dog", "pup", "pet", "animal"],
- "transportation": ["transport", "tram", "metro", "bus", "direction"],
+ "transportation": ["transport", "metro", "bus", "direction"],
  "parking": ["parking", "car", "vehicl", "car park"],
  "restaurant": ["restaurant", "diner", "bistro", "cafe", "food"]}
