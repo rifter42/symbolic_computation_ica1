@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [enlive "1.1.6"]
                  [org.clojure/data.json "2.4.0"]]
-  :repl-options {:init-ns symbolic-computation-ica1.core})
+  :repl-options {:init-ns symbolic-computation-ica1.core}
+  :main symbolic-computation-ica1.core)
