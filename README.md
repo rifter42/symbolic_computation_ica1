@@ -1,4 +1,4 @@
-# symbolic_computation_ica1
+# prague_parks_chatbot
 
 A Clojure library designed to ... well, that part is up to you.
 
