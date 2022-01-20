@@ -13,3 +13,9 @@
            (binding [*out* (java.io.StringWriter.)]
              (print-bot "Anastasia")
              (str *out*))))))
+
+(deftest exit?-test
+  (testing "Exit predicate testing"
+    (is (exit? "exit"))
+    (is (exit? "bye"))
+    (is (exit? "quit"))))
