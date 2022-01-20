@@ -135,24 +135,18 @@
           (json/write-str parks-map)
           :append false)))
 
-;;dogs breeds
 
-; caching content
+;;Scraping dog breeds data
 
 (def dog-breeds-url "https://www.akc.org/dog-breeds/")
 
 (def cache-dog-breeds-url
   "Get website content from www.akc.org
   returns a hashlist of html content as hash-maps"
-
   (html/html-resource (java.net.URL. dog-breeds-url)))
 
-;; list of breeds
-(html/select cache-dog-breeds-url [:div.custom-select :select :option])
-
-;; The breeds
-
 (def dog-breeds
+  "List of dog breeds"
   (drop 1
         (distinct (map html/text
                        (html/select cache-dog-breeds-url
@@ -160,23 +154,18 @@
                                      :select#breed-search
                                      :option])))))
 
-;; The URLs of each breed
-
 (def dog-breeds-urls
+  "List of URLs for detailed information about each breed"
   (mapcat #(html/attr-values % :value)
           (html/select cache-dog-breeds-url
                        [:div.custom-select
                         :select#breed-search
                         :option])))
 
-;;TODO: extracting data from each breed using the URLs
-
-;; template to start with
-
 (def dog-data-url-tmp "https://www.akc.org/dog-breeds/affenpinscher/")
 
 (def cache-dog-data-url
-  "Get website content from www.akc.org
+  "Get dog-specific data from www.akc.org and
   returns a hashlist of html content as hash-maps"
 
   (html/html-resource (java.net.URL. dog-data-url-tmp)))
