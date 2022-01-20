@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9a0b6950-1c44-4506-bd4c-5bbf624d5025" name="Changes" comment="removing core_tst.clj" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dogs_data" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/symbolic_computation_ica1/scraper.clj" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="23wIttY1MpEpFXosUdFuiWWrQVX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="ReplState" timestamp="1642657592109">{:repl-history {:ide [], :local [{:command &quot;(html/html-resource (java.net.URL. dog-breeds-url))&quot;, :offset 51, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div])&quot;, :offset 41, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.selectize-dropdown-content])&quot;, :offset 68, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.div])&quot;, :offset 45, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div :div])&quot;, :offset 46, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(def dog-breeds-url \&quot;https://www.akc.org/dog-breeds/\&quot;)&quot;, :offset 54, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(def cache-dog-breeds-url\n  \&quot;Get website content from Hacker News\n  Returns: list of html content as hash-maps\&quot;\n\n  (html/html-resource (java.net.URL. dog-breeds-url)))&quot;, :offset 167, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div :div.selectize-dropdown-content])&quot;, :offset 73, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div :div :div.selectize-dropdown-content])&quot;, :offset 78, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div]))&quot;, :offset 66, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div :div]))&quot;, :offset 71, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div.selectize-dropdown-content]))&quot;, :offset 93, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div :div.selectize-dropdown-content]))&quot;, :offset 98, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div :div :div.selectize-dropdown-content]))&quot;, :offset 103, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div :div :div :div :div :div.selectize-dropdown-content]))&quot;, :offset 108, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div :div :div :div :div :div.selectize-dropdown-content])&quot;, :offset 93, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div :div :div :div :div :div])&quot;, :offset 66, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.custom-select__select])&quot;, :offset 63, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.custom-select :div])&quot;, :offset 60, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.custom-select])&quot;, :offset 55, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url [:div.custom-select :option])&quot;, :offset 63, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select__select :option]))&quot;, :offset 86, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select :option :option]))&quot;, :offset 86, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select :option.option]))&quot;, :offset 85, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select (key selectize-dropdown single custom-select__select)]))&quot;, :offset 124, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select :selectize-dropdown-content]))&quot;, :offset 98, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div\n                                         :selectize-dropdown-content]))&quot;, :offset 125, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 1\n      (html/select cache-dog-breeds-url [:div.custom-select :option]))&quot;, :offset 78, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 20\n      (html/select cache-dog-breeds-url [:div.custom-select :option]))&quot;, :offset 79, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 20\n      (html/select cache-dog-breeds-url [:div.custom-select :option :value]))&quot;, :offset 86, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 20\n      (html/select cache-dog-breeds-url [:div.custom-select :select]))&quot;, :offset 79, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 20\n      (html/select cache-dog-breeds-url [:div.custom-select :select :custom-select__select]))&quot;, :offset 102, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(take 20\n      (html/select cache-dog-breeds-url [:div.custom-select :select :option]))&quot;, :offset 87, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/text \n     (html/select cache-dog-breeds-url \n                  [:div.custom-select\n                   :select \n                   :option]))&quot;, :offset 151, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-values \n     (html/select cache-dog-breeds-url \n                  [:div.custom-select\n                   :select \n                   :option]))&quot;, :offset 158, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/text-node \n     (html/select cache-dog-breeds-url \n                  [:div.custom-select\n                   :select \n                   :option]))&quot;, :offset 156, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-map? \n     (html/select cache-dog-breeds-url \n                  [:div.custom-select\n                   :select \n                   :option]))&quot;, :offset 156, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option\n              :value])&quot;, :offset 133, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(select-keys (html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option]))&quot;, :offset 126, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :attrs.value])&quot;, :offset 117, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option\n              :attrs.value])&quot;, :offset 139, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option\n              :attrs])&quot;, :offset 133, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option#value])&quot;, :offset 118, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option.value])&quot;, :offset 118, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     value)&quot;, :offset 166, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     'value')&quot;, :offset 168, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option]))&quot;, :offset 155, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     :value)&quot;, :offset 167, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     :value)&quot;, :offset 163, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     :option)&quot;, :offset 164, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     [:option])&quot;, :offset 166, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     [:value])&quot;, :offset 165, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/attr-values\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select])\n     :value)&quot;, :offset 136, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/text\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option])\n     :value)&quot;, :offset 156, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option\n              (html/nth-child 1)])&quot;, :offset 145, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option]\n             (html/nth-child 1))&quot;, :offset 144, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-breeds-url\n             [:div.custom-select\n              :select\n              :option])&quot;, :offset 21} {:command &quot;(map mapcat #(html/attr-values % :value)\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option]))&quot;, :offset 174, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map #(html/attr-values % :value)\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option]))&quot;, :offset 167, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(mapcat #(html/attr-values % :value)\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option]))&quot;, :offset 170, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(map html/text\n     (html/select cache-dog-breeds-url\n                  [:div.custom-select\n                   :select\n                   :option]))&quot;, :offset 148, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select\n                             :option])))&quot;, :offset 199, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select.breed-search\n                             :option])))&quot;, :offset 212, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select.breed-search])))&quot;, :offset 175, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select.custom-select__select\n                             :option])))&quot;, :offset 221, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select#\n                             :option])))&quot;, :offset 24} {:command &quot;(distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select#breed-search\n                             :option])))&quot;, :offset 212, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(drop 1\n      (distinct (map html/text\n               (html/select cache-dog-breeds-url\n                            [:div.custom-select\n                             :select#breed-search\n                             :option]))))&quot;, :offset 227, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(mapcat #(html/attr-values % :value)\n        (html/select cache-dog-breeds-url\n                     [:div.custom-select\n                      :select#breed-search\n                      :option]))&quot;, :offset 195, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(ns symbolic-computation-ica1.scraper\n  (:require [net.cgrand.enlive-html :as html]\n            [clojure.data.json :as json]))\n&quot;, :offset 127, :ns &quot;symbolic-computation-ica1.core&quot;} {:command &quot;;;dogs breeds\n\n; caching content\n\n(def dog-breeds-url \&quot;https://www.akc.org/dog-breeds/\&quot;)\n\n(def cache-dog-breeds-url\n  \&quot;Get website content from www.akc.org\n  returns a hashlist of html content as hash-maps\&quot;\n\n  (html/html-resource (java.net.URL. dog-breeds-url)))\n\n;; list of breeds\n(html/select cache-dog-breeds-url [:div.custom-select :select :option])\n\n;; The breeds\n\n(def dog-breeds\n  (drop 1\n        (distinct (map html/text\n                       (html/select cache-dog-breeds-url\n                                    [:div.custom-select\n                                     :select#breed-search\n                                     :option])))))\n\n;; The URLs of each breed\n\n(def dog-breeds-urls\n  (mapcat #(html/attr-values % :value)\n          (html/select cache-dog-breeds-url\n                       [:div.custom-select\n                        :select#breed-search\n                        :option])))\n\n;;TODO: extracting data from each breed using the URLs\n\n;;scrape color&quot;, :offset 978, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div.breed-trait-score__choices\n              :span])&quot;, :offset 99, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div.breed-trait-score__choices])&quot;, :offset 79, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div])&quot;, :offset 52, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div.breed-trait-score__choice_breed-trait-score__choice--selected\n              ])&quot;, :offset 129, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :div.js-tabbed-content.breed-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 151, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(print dog-data-url-tmp)&quot;, :offset 24, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(def dog-data-url-tmp \&quot;https://www.akc.org/dog-breeds/affenpinscher/\&quot;)\n\n(def cache-dog-data-url\n  \&quot;Get website content from www.akc.org\n  returns a hashlist of html content as hash-maps\&quot;\n\n  (html/html-resource (java.net.URL. dog-data-url-tmp)))&quot;, :offset 244, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :div.breed-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 133, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :div.breed-trait-score__choice])&quot;, :offset 97, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div.breed-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 114, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :span])&quot;, :offset 72, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :class.])&quot;, :offset 21} {:command &quot;(html/select cache-dog-data-url\n             [:class.breed-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 116, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :class.bree d-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 136, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :class.breed-trait-score__choice_breed-trait-score__choice--selected])&quot;, :offset 135, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :class.breed-trait-score])&quot;, :offset 91, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div\n              :class.breed-trait-score__choice])&quot;, :offset 99, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(html/select cache-dog-data-url\n             [:div.breed-page])&quot;, :offset 63, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(ns symbolic-computation-ica1.core-test\n  (:require [clojure.test :refer :all]\n            [symbolic-computation-ica1.core :refer :all]))\n&quot;, :offset 138, :ns &quot;symbolic-computation-ica1.scraper&quot;} {:command &quot;(true? -main)&quot;, :offset 13, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(true? (-main))&quot;, :offset 15, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(deftest -main-test2\n  (is (= 0 (deref (future (-main sample (list \&quot;user\&quot; \&quot;exit\&quot;)))\n                  1000 :timeout)))\n  (is (= 0 (deref (future (-main #'sample (list \&quot;user\&quot; \&quot;exit\&quot;)))\n                  1000 :timeout))))&quot;, :offset 219, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(future (-main (apply sample (list \&quot;user\&quot; \&quot;exit\&quot;))))&quot;, :offset 52, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(future-call -main)&quot;, :offset 19, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;exit&quot;, :offset 4, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(defn sample [&amp; args]\n  0)&quot;, :offset 26, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(realized? -main)&quot;, :offset 17, :ns &quot;symbolic-computation-ica1.core-test&quot;} {:command &quot;(testing \&quot;chatbot initialization test\&quot;\n  (-main)\n  (is (realized? (-main))))&quot;, :offset 76, :ns &quot;symbolic-computation-ica1.core-test&quot;}], :remote []}}</component>
+  <component name="RunManager" selected="clojure.test.Run tests in symbolic-computation-ica1.chatbot-test">
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <setting name="focusEditor" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="REPL" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <module name="symbolic_computation_ica1" />
+      <setting name="displayName" value="REPL" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run tests in symbolic-computation-ica1.chatbot-test" type="ClojureTestRunConfiguration" factoryName="clojure.test" temporary="true">
+      <module name="symbolic_computation_ica1" />
+      <option name="namespace" value="symbolic-computation-ica1.chatbot-test" />
+      <option name="selector" value="SINGLE_NS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test symbolic-computation-ica1.core-test/-main-test" type="ClojureTestRunConfiguration" factoryName="clojure.test" temporary="true">
+      <module name="symbolic_computation_ica1" />
+      <option name="selector" value="SINGLE_VAR" />
+      <option name="varFqn" value="symbolic-computation-ica1.core-test/-main-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test symbolic-computation-ica1.core-test/-main-test2" type="ClojureTestRunConfiguration" factoryName="clojure.test" temporary="true">
+      <module name="symbolic_computation_ica1" />
+      <option name="selector" value="SINGLE_VAR" />
+      <option name="varFqn" value="symbolic-computation-ica1.core-test/-main-test2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test symbolic-computation-ica1.core-test/a-test" type="ClojureTestRunConfiguration" factoryName="clojure.test" temporary="true">
+      <module name="symbolic_computation_ica1" />
+      <option name="selector" value="SINGLE_VAR" />
+      <option name="varFqn" value="symbolic-computation-ica1.core-test/a-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Clojure REPL.REPL" />
+      <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/a-test" />
+      <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/-main-test" />
+      <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/-main-test2" />
+      <item itemvalue="clojure.test.Run tests in symbolic-computation-ica1.chatbot-test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="clojure.test.Run tests in symbolic-computation-ica1.chatbot-test" />
+        <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/-main-test2" />
+        <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/-main-test" />
+        <item itemvalue="clojure.test.Test symbolic-computation-ica1.core-test/a-test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a0b6950-1c44-4506-bd4c-5bbf624d5025" name="Changes" comment="" />
+      <created>1642638944642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642638944642</updated>
+      <workItem from="1642638949350" duration="17633000" />
+    </task>
+    <task id="LOCAL-00001" summary="extracting data of the dog-breeds and the urls where their info is located">
+      <created>1642644810793</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642644810793</updated>
+    </task>
+    <task id="LOCAL-00002" summary="extracting data of the dog-breeds and the urls where their info is located">
+      <created>1642645075557</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642645075557</updated>
+    </task>
+    <task id="LOCAL-00003" summary="defining required URLs to construct a template">
+      <created>1642649547642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642649547642</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#29 testing Bot output">
+      <created>1642653344735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642653344735</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#29 testing exit? predicate">
+      <created>1642653949038</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642653949038</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removing core_tst.clj">
+      <created>1642655512229</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642655512229</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#28 extracting data of the dog-breeds and the urls where their info is located" />
+    <MESSAGE value="defining required URLs to construct a template" />
+    <MESSAGE value="#29 testing Bot output" />
+    <MESSAGE value="#29 testing exit? predicate" />
+    <MESSAGE value="removing core_tst.clj" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing core_tst.clj" />
+  </component>
+</project>
