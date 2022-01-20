@@ -170,3 +170,14 @@
                         :option])))
 
 ;;TODO: extracting data from each breed using the URLs
+
+;; template to start with
+
+(def dog-data-url-tmp "https://www.akc.org/dog-breeds/affenpinscher/")
+
+(def cache-dog-data-url
+  "Get website content from www.akc.org
+  returns a hashlist of html content as hash-maps"
+
+  (html/html-resource (java.net.URL. dog-data-url-tmp)))
+
