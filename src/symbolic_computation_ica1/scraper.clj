@@ -1,4 +1,3 @@
-;;defining namespace
 (ns symbolic-computation-ica1.scraper
   (:require [net.cgrand.enlive-html :as html]
             [clojure.data.json :as json]))
@@ -56,45 +55,45 @@
 
   ([park-name bool wild-card]
    (if (false? bool)
-    (map html/text
-        (html/select
-          (html/html-resource (java.io.File. park-name))
-          [:div.js-tabbed-content
-           (keyword (str "p." wild-card))]
-          ))
+     (map html/text
+          (html/select
+            (html/html-resource (java.io.File. park-name))
+            [:div.js-tabbed-content
+             (keyword (str "p." wild-card))]
+            ))
 
-    (if (= wild-card "key")
-      (map html/text
-           (html/select
-             (html/html-resource (java.io.File. park-name))
-             [:div.js-tabbed-content
-              :p
-              :strong]
-             ))
+     (if (= wild-card "key")
+       (map html/text
+            (html/select
+              (html/html-resource (java.io.File. park-name))
+              [:div.js-tabbed-content
+               :p
+               :strong]
+              ))
 
-      (if (= wild-card "value")
-        (map html/text
-             (html/select
-               (html/html-resource (java.io.File. park-name))
-               [:div.js-tabbed-content
-                :p
-                [:font (html/nth-child 2)]]
-               ))))
-    )))
+       (if (= wild-card "value")
+         (map html/text
+              (html/select
+                (html/html-resource (java.io.File. park-name))
+                [:div.js-tabbed-content
+                 :p
+                 [:font (html/nth-child 2)]]
+                ))))
+     )))
 
 (defn text-extract-keys [park-name]
-  "takes a park-name that's bound to html file of the park
+  "Takes a park-name that's bound to html file of the park
   returns keys of the elements to be extracted"
   (text-extract park-name true "key"))
 
 (defn text-extract-values [park-name]
-  "takes a park-name that's bound to html file of the park
+  "Takes a park-name that's bound to html file of the park
   and returns the value of values for the keys extracted previously"
   (text-extract park-name true "value"))
 
 
 (defn sanitizer [str]
-  "takes a string and formats the output to comply with JSON specifications"
+  "Takes a string and formats the output to comply with JSON specifications"
   (clojure.string/replace
     (clojure.string/replace
       (clojure.string/replace
@@ -105,14 +104,14 @@
   )
 
 (defn key-sanitizer [park-name]
-  "takes an html file and returns
+  "Takes an html file and returns
   sanitized keywords after extracting them from the text"
   (map keyword
        (map
          sanitizer (text-extract-keys park-name))))
 
 (defn map-generator
-  "takes park name as a string only or a map in addition to the string
+  "Takes park name as a string only or a map in addition to the string
    and, it constructs a map of the park name, and it's description
    or ot merges the park name and its description with the map provided"
   ([park-name]
@@ -128,10 +127,46 @@
    (merge (map-generator park-name) map)))
 
 (defn json-generator [parks-list]
-  "transforms a map of parks descriptions to a JSON formatted file"
+  "Transforms a map of parks descriptions to a JSON formatted file"
   (let [parks-map (apply merge
                          (map map-generator
                               parks-list))]
     (spit "./resources/parks_json/park-description.json"
           (json/write-str parks-map)
           :append false)))
+
+;;dogs breeds
+
+; caching content
+
+(def dog-breeds-url "https://www.akc.org/dog-breeds/")
+
+(def cache-dog-breeds-url
+  "Get website content from www.akc.org
+  returns a hashlist of html content as hash-maps"
+
+  (html/html-resource (java.net.URL. dog-breeds-url)))
+
+;; list of breeds
+(html/select cache-dog-breeds-url [:div.custom-select :select :option])
+
+;; The breeds
+
+(def dog-breeds
+  (drop 1
+        (distinct (map html/text
+                       (html/select cache-dog-breeds-url
+                                    [:div.custom-select
+                                     :select#breed-search
+                                     :option])))))
+
+;; The URLs of each breed
+
+(def dog-breeds-urls
+  (mapcat #(html/attr-values % :value)
+          (html/select cache-dog-breeds-url
+                       [:div.custom-select
+                        :select#breed-search
+                        :option])))
+
+;;TODO: extracting data from each breed using the URLs
