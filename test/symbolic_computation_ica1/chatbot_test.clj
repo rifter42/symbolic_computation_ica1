@@ -4,12 +4,12 @@
 
 (deftest print-bot-test
   (testing "Bot output testing"
-    (is (= "Bot> Med\r\n"
+    (is (= "Bot> Med\n"
            (binding [*out* (java.io.StringWriter.)]
              (print-bot "Med")
              (str *out*))))
 
-    (is (= "Bot> Anastasia\r\n"
+    (is (= "Bot> Anastasia\n"
            (binding [*out* (java.io.StringWriter.)]
              (print-bot "Anastasia")
              (str *out*))))))
