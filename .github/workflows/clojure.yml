@@ -20,7 +20,7 @@ jobs:
         sudo apt-get -y install curl
         curl -sLO https://raw.githubusercontent.com/clj-kondo/clj-kondo/master/script/install-clj-kondo
         chmod +x install-clj-kondo
-        sudo .linter/install-clj-kondo
+        sudo ./install-clj-kondo
     - name: Run clj-kondo
       run: clj-kondo --lint src --config '{:output {:pattern "::{{level}} file={{filename}},line={{row}},col={{col}}::{{message}}"}}'
     - name: Run tests
