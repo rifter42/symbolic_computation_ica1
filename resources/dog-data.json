@@ -1,95 +1,60 @@
 {
   "dachshund": {
-    "colour": [
-      "black",
-      "black & cream"
-    ],
+    "colour": "black & cream",
     "size": "small",
     "coat": "smooth",
     "ears": "down"
   },
   "labrador-retriever": {
-    "colour": [
-      "yellow"
-    ],
+    "colour": "yellow",
     "size": "big",
     "coat": "double",
     "ears": "down"
   },
   "affenpinscher": {
-    "colour": [
-      "black"
-    ],
+    "colour": "black",
     "size": "small",
     "coat": "wiry",
     "ears": "up"
   },
   "chihuahua": {
-    "colour": [
-      "black",
-      "choclate",
-      "fawn",
-      "red"
-    ],
+    "colour": "black",
     "size": "small",
     "coat": "smooth",
     "ears": "up"
   },
   "siberian-husky": {
-    "colour": [
-      "agouti & white",
-      "black",
-      "black & white",
-      "gray & white",
-      "white"
-    ],
+    "colour": "black & white",
     "size": "large",
     "coat": "double",
     "ears": "up"
   },
   "german-shepherd-dog": {
-    "colour": [
-      "black",
-      "black & cream",
-      "black & silver",
-      "black & tan"
-    ],
+    "colour": "black & cream",
     "size": "large",
     "coat": "double",
     "ears": "up"
   },
   "american-foxhound": {
-    "colour": [
-      "black white & tan"
-    ],
+    "colour": "black white & tan",
     "size": "medium",
     "coat": "smooth",
     "ears": "down"
   },
   "appenzeller-sennenhund": {
-    "colour": [
-      "black brown & white"
-    ],
+    "colour": "black brown & white",
     "size": "medium",
     "coat": "smooth",
     "ears": "down"
   },
   "australian-shepherd": {
-    "colour": [
-      "black",
-      "white & brown",
-      "red"
-    ],
+    "colour": "white & brown",
     "size": "medium",
     "coat": "double",
     "ears": "down"
   },
   "golden-retriever": {
-    "colour": [
-      "golden",
-      "dark golden",
-      "light golden"
-    ],
+    "colour": "golden",
     "size": "large",
     "coat": "double",
     "ears": "down"
