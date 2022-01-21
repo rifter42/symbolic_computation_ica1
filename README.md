@@ -1,6 +1,6 @@
 # Prague Parks Chatbot
 
-An ELIZA-sryle chatbot that is implemented fully in Clojure. It is designed to provide information about different parks in Prague.
+An ELIZA-style chatbot that is implemented fully in Clojure. It is designed to provide information about different parks in Prague as well as information to helpidentify dog breeds that a personmight encounter.
 The information provided ranges from the set of facilities in place to the various activities that can be done in a specific park.
 
 The chatbot can be used from Clojure REPL environment.
