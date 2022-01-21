@@ -1,4 +1,4 @@
-(defproject symbolic_computation_ica1 "0.0.2"
+(defproject symbolic_computation_ica1 "0.1.0"
   :description "An ELIZA_like chatbot about Prague parks in Clojure"
   :url "https://github.com/rifter42/symbolic_computation_ica1"
   :license {:name "Eclipse Public License - v 2.0"
