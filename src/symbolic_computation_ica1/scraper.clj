@@ -1,6 +1,7 @@
 (ns symbolic-computation-ica1.scraper
   (:require [net.cgrand.enlive-html :as html]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json]
+            [clojure.string :as str]))
 
 ;;binding parks .html paths to variables for code clarity
 (def letenske-sady "./resources/parks_html/letenske_sady.html")
@@ -41,7 +42,7 @@
 ;;i_doba
 
 (defn text-extract
-  "function takes an html file/park name and a class (as clojure string)
+  "Function takes an html file/park name and a class (as clojure string)
   and a wild-card element. it returns text content of matching tags/attributes
   if bool false, wild-card should be a html class from the list above
   if bool is true, wild-card should be either key or value as trings"
@@ -78,22 +79,25 @@
                 [:div.js-tabbed-content
                  :p
                  [:font (html/nth-child 2)]]
-                ))))
+                ))
+         nil))
      )))
 
-(defn text-extract-keys [park-name]
+(defn text-extract-keys
   "Takes a park-name that's bound to html file of the park
   returns keys of the elements to be extracted"
+  [park-name]
   (text-extract park-name true "key"))
 
-(defn text-extract-values [park-name]
+(defn text-extract-values
   "Takes a park-name that's bound to html file of the park
   and returns the value of values for the keys extracted previously"
+  [park-name]
   (text-extract park-name true "value"))
 
 
 (defn sanitizer [str]
-  "Takes a string and formats the output to comply with JSON specifications"
+  "Takes a string and formats the output in JSON-accepted strings"
   (clojure.string/replace
     (clojure.string/replace
       (clojure.string/replace
@@ -103,9 +107,10 @@
     #":" "")
   )
 
-(defn key-sanitizer [park-name]
+(defn key-sanitizer
   "Takes an html file and returns
   sanitized keywords after extracting them from the text"
+  [park-name]
   (map keyword
        (map
          sanitizer (text-extract-keys park-name))))
@@ -126,8 +131,9 @@
   ([park-name map]
    (merge (map-generator park-name) map)))
 
-(defn json-generator [parks-list]
+(defn json-generator
   "Transforms a map of parks descriptions to a JSON formatted file"
+  [parks-list]
   (let [parks-map (apply merge
                          (map map-generator
                               parks-list))]
