@@ -6,6 +6,7 @@
             [clojure.string :as string]
             [clojure.set]))
 
+
 (def welcome-message "A message to display at the start of the application"
   "========================================================================
                   Welcome to Prague Parks Chatbot!
