@@ -1,8 +1,11 @@
 (ns symbolic-computation-ica1.chatbot
   (:require [symbolic-computation-ica1.matching :as matching]
             [symbolic-computation-ica1.formatting :as formatting]
+            [symbolic-computation-ica1.dog_identifying :as dog]
             [clojure.data.json :as json]
-            [clojure.string :as str]))
+            [clojure.string :as string]
+            [clojure.set]))
+
 
 (def welcome-message "A message to display at the start of the application"
   "========================================================================
@@ -34,7 +37,7 @@ To exit the application, type quit.
   []
   (print (str @user-name "> "))
   (flush)
-  (str/trim-newline (read-line)))
+  (string/trim-newline (read-line)))
 
 (defn start!
   "Runs once at the start of the application. Prints information and
@@ -60,9 +63,9 @@ To exit the application, type quit.
   []
   (print-bot "Goodbye!"))
 
-(defn answer!
-  "Main bot fucntion, contains answer logic based on the kind of information
-  matched from user input. Displays bot answer to the user."
+(defn answer-park
+  "Contains answer logic based on the kind of information
+  matched from user input for the park part of the application."
   [input]
   (let [[park info park-info] (matching/match (formatting/sanitizer input))]
     (cond
@@ -88,3 +91,26 @@ To exit the application, type quit.
 
       :else
         (print-bot "Sorry, I'm not sure what you mean"))))
+
+
+(defn answer-dog
+  "Contains answer logic based on the kind of information
+  matched from user input for the dog part of the application."
+  []
+  (doseq [[k v] dog/possible-values]
+    (print-bot (str "What is the " (name k) " of the dog? (" v ")"))
+    (dosync (ref-set dog/dog-map (assoc @dog/dog-map k (get-input)))))
+    (let [dog (some #(dog/match-dog %) (keys dog/dog-data))]
+      (if dog
+        (print-bot (str "This dog could be " (name dog)))
+        (print-bot (str "Sorry, can't find a dog with this description.\n"
+                         "If you want to try again, type 'identify dog'")))
+      (dosync (ref-set dog/dog-map {}))))
+
+(defn answer!
+  "Main bot fucntion, displays bot answer to the user."
+  [input]
+  (let [sanitized-input (formatting/sanitizer input)]
+    (if (.contains '("identify dog") sanitized-input)
+      (answer-dog)
+      (answer-park sanitized-input))))
