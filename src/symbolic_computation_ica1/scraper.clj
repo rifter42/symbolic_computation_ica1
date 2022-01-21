@@ -96,11 +96,12 @@
   (text-extract park-name true "value"))
 
 
-(defn sanitizer [str]
-  "Takes a string and formats the output in JSON-accepted strings"
-  (clojure.string/replace
-    (clojure.string/replace
-      (clojure.string/replace
+(defn sanitizer
+  "Takes a string and formats the output by removing special charachters"
+  [str]
+  (str/replace
+    (str/replace
+      (str/replace
         str
         #"\s+\S*$" "")
       #" " "_")
