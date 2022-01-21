@@ -1,5 +1,6 @@
 (ns symbolic-computation-ica1.dog_identifying
   (:require [clojure.data.json :as json]
+            [clojure.string :as str]
             [clojure.set]))
 
 (def dog-map "Map to store user answers"
@@ -15,7 +16,7 @@
   (into {}
   (for [key possible-keys]
     (let [vals (distinct (map #(get % key) (vals dog-data)))]
-      [key (clojure.string/join " " vals)]))))
+      [key (str/join " " vals)]))))
 
 (defn match-dog
   "Matches user response against a set of values for a dog. If the set difference
