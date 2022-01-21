@@ -1,9 +1,9 @@
 (ns symbolic-computation-ica1.chatbot
   (:require [symbolic-computation-ica1.matching :as matching]
             [symbolic-computation-ica1.formatting :as formatting]
-            [symbolic-computation-ica1.formatting :as formatting]
             [symbolic-computation-ica1.dog_identifying :as dog]
             [clojure.data.json :as json]
+            [clojure.string :as string]
             [clojure.set]))
 
 (def welcome-message "A message to display at the start of the application"
@@ -36,7 +36,7 @@ To exit the application, type quit.
   []
   (print (str @user-name "> "))
   (flush)
-  (clojure.string/trim-newline (read-line)))
+  (string/trim-newline (read-line)))
 
 (defn start!
   "Runs once at the start of the application. Prints information and

@@ -20,11 +20,12 @@
   (when (contains? keys (keyword el))
     (keyword el)))
 
-(defn match-keyword-with-syn [keys el]
+(defn match-keyword-with-syn
   "Returns the key if it's present in the vector of synonyms for this key"
+  [keys el]
   (some
     (fn [[k v]]
-      (if (some #(.contains el %) v)
+      (when (some #(.contains el %) v)
         k)) keys))
 
 (defn match-keywords
@@ -66,7 +67,7 @@
   (let* [matched-park (match-keywords park-names input false)
          matched-info (match-keywords synonyms input true)
          matched-park-info (get (get parks matched-park) matched-info)]
-      (if (not (nil? matched-park))
+      (when (not (nil? matched-park))
           (dosync (ref-set selected-park matched-park)))
       (if (and (nil? matched-park) (not (nil? matched-info)))
         (if (contains? (get parks @selected-park) matched-info)
