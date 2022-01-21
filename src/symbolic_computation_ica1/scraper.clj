@@ -1,9 +1,9 @@
 (ns symbolic-computation-ica1.scraper
   (:require [net.cgrand.enlive-html :as html]
-            [clojure.data.json :as json]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [clojure.data.json :as json]))
 
-;;binding parks .html paths to variables for code clarity
+;;Binding parks .html paths to variables for code clarity
 (def letenske-sady "./resources/parks_html/letenske_sady.html")
 (def bertramka "./resources/parks_html/bertramka.html")
 (def frantiskanska-zahrada "./resources/parks_html/frantiskanska_zahrada.html")
@@ -18,8 +18,6 @@
 (def vojanovy-sady "./resources/parks_html/vojanovy_sady.html")
 (def vysehrad "./resources/parks_html/vysehrad.html")
 
-;;Binding a list of strings of the parks names to be used
-;; in map-generator function
 (def parks-list
   '("letenske-sady"
      "stromovka"
